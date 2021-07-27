@@ -1,32 +1,25 @@
-const { Project, Article } = require('../models');
+const express = require('express');
 
-const mainController = {
-    getHomePage : (req, res) => {
-        res.render('home');
-    },
+const adminMiddleware = require('./middlewares/adminMiddleware');
 
-    getProjectsPage : async (req, res) => {
-        try {
-            const projects = await Project.findAll();
-            res.render('work', { projects });
-        } catch(err) {
-            console.log(err);
-        }
-    },
+// controllers
+const mainController = require('./controllers/mainController');
+const adminController = require('./controllers/adminController');
 
-    getBlogPage : async (req, res) => {
-        try {
-            const articles = await Article.findAll();
-            res.render('blog', { articles });
-        } catch(err) {
-            console.log(err);
-        }
-    },
+const router = express.Router();
 
-    getContactPage : (req, res) => {
-        res.render('contact');
-    },
-};
+// routes principales 
+router.get('/', mainController.getHomePage);
+router.get('/projects', mainController.getProjectsPage);
+router.get('/blog', mainController.getBlogPage);
+router.get('/contact', mainController.getContactPage);
 
-// on l'exporte pour le rendre accessible dans d'autres fichiers
-module.exports = mainController;
+// ADMIN
+router.get('/signup', adminController.signupPage);
+router.post('/signup', adminController.signupAction);
+router.get('/login', adminController.loginPage);
+router.post('/login', adminController.loginAction);
+
+router.get('/admin', adminMiddleware, adminController.adminPage);
+
+module.exports = router;

@@ -1,0 +1,18 @@
+<footer class="footer">
+    <% if (locals.user) { %>
+        Connected as <%= user.first_name %> <%= user.last_name %>
+    <% } else { %>
+        Not connected
+    <% } %> 
+</footer>
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
+<script src="/js/back.js"></script>
+<noscript>Javascript is unactive. This page may not work properly.</noscript>
+</body>
+</html>

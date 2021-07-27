@@ -1,0 +1,195 @@
+// ---------- COLORS ---------- //
+// Pour le choix de vos palettes de couleurs => https://colorhunt.co/
+
+$colorOne: #003638;
+$colorTwo: #055052;
+$colorThree: #53B8BB;
+$colorFour: #F3F2C9;
+
+$black: #333;
+$white: #f1f1f1;
+
+
+// ---------- FONTS ---------- //
+// Pour le choix de vos polices => https://fonts.google.com/
+
+// Roboto : Thin 100, Regular 400, Regular 400 italic, Blod 700, Bold 700 italic
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,400;1,700&display=swap');
+
+
+// ---------- MIXINS ---------- //
+
+@mixin button($bg, $text) {
+    margin: .4rem;
+    padding: .4rem;
+    background-color: $bg;
+    border-radius: .4rem;
+    box-shadow: 0 0 30px $black;
+    color: $text;
+
+    &:hover {
+        background-color: darken($bg, 30);
+    }
+}
+
+
+// ---------- GLOBAL ---------- //
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: $colorFour;
+    font-family: 'Roboto', sans-serif;
+}
+
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+// ---------- LOGIN ---------- //
+.main.login {
+    justify-content: center;
+
+    & h2 {
+        margin-bottom: 2rem;
+    }
+
+    & form {
+        display: flex;
+        flex-direction: column;
+
+        & input {
+            margin-bottom: 1rem;
+            padding: .4rem;
+            width: 300px;
+
+            &[type = submit] {
+                cursor: pointer;
+                margin-bottom: 2rem;
+            }
+        }
+    }
+}
+
+
+// ---------- HEADER ---------- //
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: .4rem;
+    box-shadow: 0 0 10px $black;
+    margin-bottom: 2rem;
+    background-color: $white;
+
+    &__logo {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 3px solid $colorTwo;
+        background-image: url('/img/icons/profile-user.svg'); // changez l'image de profil
+        background-size: cover;
+        background-position-x: left;
+        background-repeat: no-repeat;
+    }
+    &__nav {
+        display: flex;
+            align-items: center;
+        &__ul {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            &__li {
+                margin: .4rem 1rem;
+                transition: .3s;
+
+                &:hover {
+                    transform: scale(1.2);
+                }
+
+                & .receivedMessages {
+                    position: relative;
+                    height: 30px;
+                
+                    & .badge {
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        color: $white;
+                        background-color: $colorTwo;
+                        border-radius: 50%;
+                        padding: 0 .3rem;
+                    }
+                
+                    & img {
+                        height: 100%;
+                    }
+                }
+
+                & img {
+                    height: 30px;
+                }
+            }
+        }
+    }
+}
+
+
+
+// ---------- BACK OFFICE ---------- //
+.main.back {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0 2rem;
+}
+.projects-box, .articles-box {
+    margin: 2rem;
+    & h2 {
+        margin: 1rem 0;
+    }
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: .6rem;
+        margin: .6rem;
+        box-shadow: 0 0 30px $black;
+        border-radius: .4rem;
+        transition: .3s;
+
+        &:hover {
+            background-color: $black;
+        }
+
+        &__icons {
+            margin-left: 1rem;
+
+            &__link {
+                text-decoration: none;
+                margin: 0 .3rem;
+            }
+        }
+    }
+}
+
+
+
+// ---------- FOOTER ---------- //
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: $white;
+    box-shadow: 0 0 10px $black;
+}

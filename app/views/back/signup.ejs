@@ -1,0 +1,30 @@
+<%- include('partials/header') %>
+
+<main class="main">
+
+    <h2>Signup</h2>
+
+    <form action="/signup" method="post">
+        <label for="firstname">Prénom</label>
+        <input type="text" name="first_name" id="first_name">
+
+        <label for="lastname">Nom</label>
+        <input type="text" name="last_name" id="last_name">
+
+        <label for="pseudo">Pseudo</label>
+        <input type="text" name="pseudo" id="pseudo">
+
+        <label for="password">Mot de passe</label>
+        <input type="password" name="password" id="password">
+
+        <label for="passwordConfirm">Confirmer le mot de passe</label>
+        <input type="password" name="passwordConfirm" id="passwordConfirm">
+
+        <input type="submit" value="Confirm">
+    </form>
+
+    <a href="/">Retour au site</a>
+    
+</main>
+
+<%- include('partials/footer') %>

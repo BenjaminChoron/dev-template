@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,400;1,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #F3F2C9;
+  font-family: "Roboto", sans-serif;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main.login {
+  justify-content: center;
+}
+.main.login h2 {
+  margin-bottom: 2rem;
+}
+.main.login form {
+  display: flex;
+  flex-direction: column;
+}
+.main.login form input {
+  margin-bottom: 1rem;
+  padding: 0.4rem;
+  width: 300px;
+}
+.main.login form input[type=submit] {
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4rem;
+  box-shadow: 0 0 10px #333;
+  margin-bottom: 2rem;
+  background-color: #f1f1f1;
+}
+.header__logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid #055052;
+  background-image: url("/img/icons/profile-user.svg");
+  background-size: cover;
+  background-position-x: left;
+  background-repeat: no-repeat;
+}
+.header__nav {
+  display: flex;
+  align-items: center;
+}
+.header__nav__ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+.header__nav__ul__li {
+  margin: 0.4rem 1rem;
+  transition: 0.3s;
+}
+.header__nav__ul__li:hover {
+  transform: scale(1.2);
+}
+.header__nav__ul__li .receivedMessages {
+  position: relative;
+  height: 30px;
+}
+.header__nav__ul__li .receivedMessages .badge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #f1f1f1;
+  background-color: #055052;
+  border-radius: 50%;
+  padding: 0 0.3rem;
+}
+.header__nav__ul__li .receivedMessages img {
+  height: 100%;
+}
+.header__nav__ul__li img {
+  height: 30px;
+}
+
+.main.back {
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0 2rem;
+}
+
+.projects-box, .articles-box {
+  margin: 2rem;
+}
+.projects-box h2, .articles-box h2 {
+  margin: 1rem 0;
+}
+.projects-box__item, .articles-box__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem;
+  margin: 0.6rem;
+  box-shadow: 0 0 30px #333;
+  border-radius: 0.4rem;
+  transition: 0.3s;
+}
+.projects-box__item:hover, .articles-box__item:hover {
+  background-color: #333;
+}
+.projects-box__item__icons, .articles-box__item__icons {
+  margin-left: 1rem;
+}
+.projects-box__item__icons__link, .articles-box__item__icons__link {
+  text-decoration: none;
+  margin: 0 0.3rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f1f1f1;
+  box-shadow: 0 0 10px #333;
+}/*# sourceMappingURL=back.css.map */

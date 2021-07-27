@@ -1,0 +1,165 @@
+// ---------- COLORS ---------- //
+// Pour le choix de vos palettes de couleurs => https://colorhunt.co/
+
+$colorOne: #003638;
+$colorTwo: #055052;
+$colorThree: #53B8BB;
+$colorFour: #F3F2C9;
+
+$black: #333;
+$white: #f1f1f1;
+
+
+// ---------- FONTS ---------- //
+// Pour le choix de vos polices => https://fonts.google.com/
+
+// Roboto : Thin 100, Regular 400, Regular 400 italic, Blod 700, Bold 700 italic
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,400;1,700&display=swap');
+
+
+// ---------- MIXINS ---------- //
+
+@mixin button($bg, $text) {
+    margin: .4rem;
+    padding: .4rem;
+    background-color: $bg;
+    border-radius: .4rem;
+    box-shadow: 0 0 30px $black;
+    color: $text;
+
+    &:hover {
+        background-color: darken($bg, 30);
+    }
+}
+
+
+// ---------- GLOBAL ---------- //
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: $colorFour;
+    font-family: 'Roboto', sans-serif;
+}
+
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+// ---------- MENU ---------- //
+
+.menu.expend .menu__toggle__hover {
+    color: $white;
+}
+.menu {
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 1em;
+    &__toggle {
+        display: flex;
+        align-items: center;
+        position: relative;
+        top: 0;
+        padding: .2em .6em;
+        border-radius: 10px;
+        cursor: pointer;
+        &__hover {
+            margin: auto 0;
+            color: $colorOne;
+            font-size: 0;
+            transition: .3s;
+        }
+        &__icon {
+            width: 40px;
+            height: 34px;
+        }
+    }
+    &__container {
+        display: none;
+    }
+    &__nav {
+        flex: 1;
+    }
+    &__socials {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        list-style: none;
+
+        &__link {
+            margin: .6em;
+            text-transform: uppercase;
+        
+            & a {
+                display: inline-block;
+                color: $white;
+                text-decoration: none;
+                transition: .3s;
+            
+                &:hover {
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+}
+.expend {
+    width: 176px;
+    height: 100vh;
+    background-color: $colorOne;
+    box-shadow: 0 0 10px $black;
+}
+.appear {
+    font-size: 30px;
+    line-height: 30px;
+}
+.show-menu {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.nav__list {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+
+    &__item {
+        margin: 1em 0;
+        transition: .3s;
+
+        & a {
+            color: $white;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: .3s;
+        
+                &:hover {
+                    color: $colorThree;
+                }
+        }
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+}

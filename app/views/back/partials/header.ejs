@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- CSS -->
+        <link rel="stylesheet" href="/css/back.css">
+        <title>Back Office</title>
+        <script src="https://cdn.ckeditor.com/ckeditor5/29.0.0/classic/ckeditor.js"></script>
+    </head>
+
+    <body>
+        <header class="header">
+            <a href="/admin">
+                <div class="header__logo"></div>
+            </a>
+            <% if (locals.user) { %>
+                <nav class="header__nav">
+                    <ul class="header__nav__ul">
+                        <li class="header__nav__ul__li">
+                            <a href="/" target="_blank">
+                                <img src="/img/icons/earth.svg" alt="">
+                            </a>
+                        </li>
+                        <li class="header__nav__ul__li">
+                            <a href="/admin/messages">
+                                <% if (notSeen.length > 0) { %>
+                                    <div class="receivedMessages">
+                                        <span class="badge"><%= notSeen.length %></span>
+                                        <img src="/img/icons/mailbox.svg" alt="">
+                                    </div>
+                                <% } else { %>
+                                    <div class="receivedMessages">
+                                        <img src="/img/icons/postbox.svg" alt="">
+                                    </div>
+                                <% } %> 
+                            </a>
+                        </li>
+                        <li class="header__nav__ul__li">
+                            <a href="/admin/work/create">
+                                <img src="/img/icons/work.svg" alt="">
+                            </a>
+                        </li>
+                        <li class="header__nav__ul__li">
+                            <a href="/admin/articles/create">
+                                <img src="/img/icons/notes.svg" alt="">
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            <% } %>
+        </header>

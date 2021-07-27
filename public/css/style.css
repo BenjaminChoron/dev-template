@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,400;1,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #F3F2C9;
+  font-family: "Roboto", sans-serif;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu.expend .menu__toggle__hover {
+  color: #f1f1f1;
+}
+
+.menu {
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 1em;
+}
+.menu__toggle {
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: 0;
+  padding: 0.2em 0.6em;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.menu__toggle__hover {
+  margin: auto 0;
+  color: #003638;
+  font-size: 0;
+  transition: 0.3s;
+}
+.menu__toggle__icon {
+  width: 40px;
+  height: 34px;
+}
+.menu__container {
+  display: none;
+}
+.menu__nav {
+  flex: 1;
+}
+.menu__socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+.menu__socials__link {
+  margin: 0.6em;
+  text-transform: uppercase;
+}
+.menu__socials__link a {
+  display: inline-block;
+  color: #f1f1f1;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.menu__socials__link a:hover {
+  transform: scale(1.2);
+}
+
+.expend {
+  width: 176px;
+  height: 100vh;
+  background-color: #003638;
+  box-shadow: 0 0 10px #333;
+}
+
+.appear {
+  font-size: 30px;
+  line-height: 30px;
+}
+
+.show-menu {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.nav__list {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+.nav__list__item {
+  margin: 1em 0;
+  transition: 0.3s;
+}
+.nav__list__item a {
+  color: #f1f1f1;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.nav__list__item a:hover {
+  color: #53B8BB;
+}
+.nav__list__item:hover {
+  transform: scale(1.2);
+}/*# sourceMappingURL=style.css.map */

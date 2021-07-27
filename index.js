@@ -1,4 +1,4 @@
-equire('dotenv').config();
+require('dotenv').config();
 const express = require('express');
 const session = require('express-session');
 
@@ -10,9 +10,6 @@ let dayjs = require('dayjs');
 // fin de modif
 let advancedFormat = require('dayjs/plugin/advancedFormat');
 dayjs.extend(advancedFormat);
-
-// on donne accès à dayjs en global
-res.locals.dayjs = dayjs;
 
 const port = process.env.PORT;
 
@@ -38,7 +35,13 @@ app.use((req, res, next) => {
         res.locals.user = req.session.user;
     }
     next();
-})
+});
+
+// accès global à DayJS
+app.use((req, res, next) => {
+    res.locals.dayjs = dayjs;
+    next();
+});
 
 app.use(router);
 

@@ -1,0 +1,21 @@
+<%- include('partials/header') %> 
+
+<main class="main login">
+
+    <h2>Connexion</h2>
+
+    <form action="/login" method="post">
+        <label for="pseudo">Identifiant</label>
+        <input type="text" name="pseudo" id="pseudo">
+
+        <label for="password">Mot de passe</label>
+        <input type="password" name="password" id="password">
+
+        <input type="submit" value="Valider">
+    </form>
+
+    <a href="/">Retour au site</a>
+    
+</main>
+
+<%- include('partials/footer') %> 

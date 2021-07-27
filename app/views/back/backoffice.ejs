@@ -1,0 +1,42 @@
+<%- include('partials/header') %> 
+
+<main class="main back">
+    <div class="projects-box">
+        <h2>Mes projets</h2>
+        <% for(const project of projects) { %>
+            <div class="projects-box__item">
+                <p><%= project.title %></p>
+                <div class="projects-box__item__icons">
+                    <a class="projects-box__item__icons__link" href="/admin/project/<%= project.id %>/update">
+                        <img class="icon" src="/img/icons/update.svg" alt="">
+                    </a>
+                    <a class="message-link" href="/admin/project/<%= project.id %>/delete">
+                        <img class="icon" src="/img/icons/delete.svg" alt="">
+                    </a>
+                </div>
+            </div>
+        <% } %> 
+    </div>
+
+    <div class="articles-box">
+        <h2>Mes articles</h2>
+        <% if (locals.articles) { %>
+            <% for(const article of articles) { %>
+                <div class="articles-box__item">
+                    <p><%= article.title %></p>
+                    <div class="articles-box__item__icons">
+                        <a class="articles-box__item__icons__link" href="/admin/articles/<%= article.id %>/update">
+                            <img class="icon" src="/img/icons/update.svg" alt="">
+                        </a>
+                        <a class="message-link" href="/admin/articles/<%= article.id %>/delete">
+                            <img class="icon" src="/img/icons/delete.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+            <% } %> 
+        <% } %>
+    </div>
+</main>
+
+
+<%- include('partials/footer') %> 
