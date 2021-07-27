@@ -361,9 +361,11 @@ body {
     &__form {
         display: flex;
         flex-direction: column;
+        padding: 2rem;
 
         &__label {
             margin: .6rem .4rem;
+            margin-top: 2rem;
         }
 
         &__input, &__textarea {
@@ -403,6 +405,7 @@ body {
 
         &__label {
             margin: .6rem .4rem;
+            margin-top: 2rem;
         }
 
         &__input, &__textarea {

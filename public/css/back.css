@@ -217,9 +217,11 @@ body {
 
 .create-project__form {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  padding: 2rem; }
   .create-project__form__label {
-    margin: .6rem .4rem; }
+    margin: .6rem .4rem;
+    margin-top: 2rem; }
   .create-project__form__input, .create-project__form__textarea {
     padding: .4rem;
     width: 100%; }
@@ -242,7 +244,8 @@ body {
   display: flex;
   flex-direction: column; }
   .create-article__form__label {
-    margin: .6rem .4rem; }
+    margin: .6rem .4rem;
+    margin-top: 2rem; }
   .create-article__form__input, .create-article__form__textarea {
     padding: .4rem;
     width: 100%; }
