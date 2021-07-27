@@ -4,7 +4,7 @@ Ce projet a pour but d'aider les développeurs.euses à gagner en visibilité sa
 
 Je l'ai voulu personnalisable et open source. N'hésitez pas à y apporter des modifications !
 
-Je ne demande aucune identification ou attribution si vous utilisez ce projet. Il est entièrement libre.
+🚨 Je ne demande aucune identification ou attribution si vous utilisez ce projet. Il est entièrement libre. 🚨
 
 ## Installation et utilisation
 
