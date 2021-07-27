@@ -23,6 +23,11 @@ const mainController = {
         }
     },
 
+    getOneArticle: async (req, res) => {
+        const article = await Article.findByPk(req.params.id);
+        res.render('front/article', { article });
+    },
+
     getContactPage : (req, res) => {
         res.render('front/contact');
     },

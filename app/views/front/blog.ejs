@@ -1,7 +1,32 @@
 <%- include('partials/header') %>
 
 <main class="main blog">
+    
     <h1>Blog</h1>
+
+    <div class="article-container">
+        
+        <% if (locals.articles) { %>
+            <% for(const article of articles) { %>
+                <div class="card">
+                    <div class="imgBx" style="background-image: url('<%= article.image %>');"></div>
+                    <div class="content">
+                        <h3 class="title"><%= article.title %></h3>
+                        <h4 class="subtitle"><%= article.subtitle %></h4>
+                        <div class="btn-box">
+                            <div class="article__button">
+                                <a class="article__button__link" href="/blog/<%= article.id %>">
+                                    Read
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% } %>  
+        <% } %>
+
+    </div>
+
 </main>
 
 <%- include('partials/footer') %>

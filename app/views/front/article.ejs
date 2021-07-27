@@ -1,0 +1,17 @@
+<%- include('partials/header') %>
+
+<main class="main article">
+    
+    <h1 class="article__title"><%= article.title %></h1>
+
+    <p class="article__subtitle"><%= article.subtitle %></p>
+
+    <img class="article__image" src="<%= article.image %>" alt="">
+        
+    <div class="article__content"><%- article.content %></div>
+
+    <p class="article__created">Posté le <%= dayjs(article.createdAt).format('Do MMMM YYYY') %></p>
+
+</main>
+
+<%- include('partials/footer') %>

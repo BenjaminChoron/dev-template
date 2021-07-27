@@ -23,9 +23,17 @@ $white: #f1f1f1;
     margin: .4rem;
     padding: .4rem;
     background-color: $bg;
+    border: none;
     border-radius: .4rem;
     box-shadow: 0 0 30px $black;
     color: $text;
+    cursor: pointer;
+    transition: .3s;
+
+    & a {
+        text-decoration: none;
+        color: $text;
+    }
 
     &:hover {
         background-color: darken($bg, 30);
@@ -55,6 +63,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 2rem;
 }
 
 // ---------- MENU ---------- //
@@ -166,11 +175,213 @@ body {
 
 
 
+// ----------------  PROJECTS  ----------------
+.main.projects {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 2rem;
+}
+
+.projects-container {
+    margin-top: 3rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    & .card {
+        position: relative;
+        max-width: 300px;
+        background-color: $white;
+        border-radius: .4rem;
+        margin: 2rem;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 5px 202px rgba(0, 0, 0, 0.5);
+
+
+        & .imgBx {
+            position: relative;
+            top: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 260px;
+            height: 170px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            border-radius: 4px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        & .content {
+            position: relative;
+            padding: 0 1rem;
+            text-align: center;
+
+            & p {
+                position: relative;
+                top: -20px;
+            }
+
+            & .btn-box {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                & img {
+                    width: 30px;
+                }
+            }
+        }
+    }
+}
+.content__title {
+    position: relative;
+    top: -30px;
+    margin-bottom: 1rem;
+    text-align: center
+}
+
+.article__button {
+    @include button($colorTwo, $white);
+}
+
+
+
+
+// ----------------  BLOG  ----------------
+
+.main.blog {
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.article-container {
+    margin-top: 3rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 2rem;
+
+    & .card {
+        position: relative;
+        max-width: 300px;
+        background-color: $white;
+        border-radius: .4rem;
+        margin: 2rem;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 5px 202px rgba(0, 0, 0, 0.5);
+
+
+        & .imgBx {
+            position: relative;
+            top: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 260px;
+            height: 170px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            border-radius: 4px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        & .content {
+            position: relative;
+            padding: 0 1rem;
+            text-align: left;
+
+            & .title {
+                position: relative;
+                top: -30px;
+                margin-bottom: 1rem;
+                text-align: center
+            }
+
+            & .subtitle {
+                position: relative;
+                top: -30px;
+                text-align: center;
+                font-weight: 100;
+            }
+
+            & .btn-box {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .article__button {
+                    @include button($colorTwo, $white);
+                }
+            }
+        }
+    }
+}
+
+
+// ----------------  ARTICLE  ----------------
+
+.main.article {
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.article {
+    &__title {
+        margin-bottom: .5rem;
+    }
+    &__subtitle {
+        margin-bottom: 2rem;
+    }
+    &__image {
+        width: 50%;
+        min-width: 300px;
+    }
+    &__content {
+        padding: 2rem;
+
+        & h2 {
+            margin: 1rem 0;
+        }
+        & h3 {
+            margin: 1rem;
+        }
+        & h4 {
+            margin: 1rem 2rem;
+        }
+        & blockquote {
+            margin-left: 2rem;
+            padding-left: 2rem;
+            border-left: 5px solid rgb(162, 162, 162);
+            font-style: italic;
+            font-weight: 100;
+        }
+    }
+    &__created{
+        align-self: flex-end;
+        margin-right: 2rem;
+        margin-bottom: 2rem;
+        font-style: italic;
+        padding-top: 1rem;
+        border-top: 1px solid rgb(162, 162, 162);
+    }
+}
+
+
+
 // ----------------  CONTACT  ----------------
 .contact-form {
     margin: 1rem;
     padding: 3rem 2rem;
-    background-color: $colorOne;
+    background-color: $colorTwo;
     width: 90%;
     box-shadow: 0 50px 50px rgba(0, 0, 0, .5);
     border-radius: .4rem;
@@ -212,7 +423,7 @@ body {
                 font-size: 18px;
                 font-weight: 100;
                 resize: none;
-                background-color: $colorOne;
+                background-color: $colorTwo;
                 color: $white;
                 border: none;
                 border-bottom: 1px solid $white;
@@ -246,18 +457,7 @@ body {
             }
 
             & input[type="submit"] {
-                cursor: pointer;
-                background-color: $colorTwo;
-                color: $white;
-                border: none;
-                border-radius: .4em;
-                max-width: 150px;
-                padding: 12px;
-                transition: .3s;
-
-                &:hover {
-                    background-color: $colorThree;
-                }
+                @include button($colorOne, $white);
             }
         }
     }

@@ -15,6 +15,7 @@ const router = express.Router();
 router.get('/', mainController.getHomePage);
 router.get('/projects', mainController.getProjectsPage);
 router.get('/blog', mainController.getBlogPage);
+router.get('/blog/:id', mainController.getOneArticle);
 router.get('/contact', mainController.getContactPage);
 router.post('/contact', contactController.actionContactForm);
 

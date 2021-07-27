@@ -2,6 +2,41 @@
 
 <main class="main projects">
     <h1>Projets</h1>
+
+    <div class="projects-container">
+        
+        <% if (locals.projects) { %>
+            <% for(const project of projects) { %>
+                <div class="card">
+                    <div class="imgBx" style="background-image: url('<%= project.image %>');"></div>
+                    <div class="content">
+                        <h3 class="content__title"><%= project.title %></h3>
+                        <p><%- project.content %></p>
+
+                        <div class="btn-box">
+                            <% if (project.see_link !== null && project.see_link !== '') { %>
+                                <div class="article__button">
+                                    <a class="article__button__link" href="<%= project.see_link %>" target="_blank"
+                                        rel="noopener noreferrer">
+                                        <img src="/img/icons/earth-globe.svg" alt="">
+                                    </a>
+                                </div>
+                            <% } %>
+                            <% if (project.github_link !== null && project.github_link !== '') { %>
+                                <div class="article__button">
+                                    <a class="article__button__link" href="<%= project.github_link %>" target="_blank"
+                                        rel="noopener noreferrer">
+                                        <img src="/img/icons/github-light.svg" alt="">
+                                    </a>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            <% } %>  
+        <% } %>
+
+    </div>
 </main>
 
 <%- include('partials/footer') %>
