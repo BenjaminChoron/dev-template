@@ -11,60 +11,61 @@
         <% if (!locals.done) { %>
             <form action="/contact" method="POST" class="form-box">
                 <div class="input-box w50">
-                    <% if(locals.first_name) { %>
-                        <input type="text" name="first_name" id="first_name" required value="<%= first_name %>">
-                        <% if (locals.firstname_error) { %>
-                            <small><%= firstname_error %></small>
-                        <% } %>
+                    <% if (locals.body) { %>
+                        <input type="text" name="first_name" id="first_name" required value="<%= body.first_name %>">
                     <% } else { %>
                         <input type="text" name="first_name" id="first_name" required>
-                    <% } %> 
+                    <% } %>
+                        <% if (locals.errors) { %>
+                            <small><%= errors.first_name %></small>
+                        <% } %>
+
                     <label for="first_name">Prénom</label>
                 </div>
 
                 <div class="input-box w50">
-                    <% if(locals.last_name) { %>
-                        <input type="text" name="last_name" id="last_name" required value="<%= last_name %>"> 
-                        <% if (locals.lastname_error) { %>
-                            <small><%= lastname_error %></small>
-                        <% } %>
+                    <% if (locals.body) { %>
+                        <input type="text" name="last_name" id="last_name" required value="<%= body.last_name %>">
                     <% } else { %>
-                    <input type="text" name="last_name" id="last_name" required>
-                    <% } %> 
+                        <input type="text" name="last_name" id="last_name" required>
+                    <% } %>
+                        <% if (locals.errors) { %>
+                            <small><%= errors.last_name %></small>
+                        <% } %>
                     <label for="last_name">Nom</label>
                 </div>
 
                 <div class="input-box w50">
-                    <% if(locals.email) { %>
-                        <input type="email" name="email" id="email" required value="<%= email %>"> 
-                        <% if (locals.email_error) { %>
-                            <small><%= email_error %></small>
-                        <% } %>
+                    <% if (locals.body) { %>
+                        <input type="email" name="email" id="email" required value="<%= body.email %>">
                     <% } else { %>
                         <input type="email" name="email" id="email" required>
-                    <% } %> 
+                    <% } %>
+                        <% if (locals.errors) { %>
+                            <small><%= errors.email %></small>
+                        <% } %>
                     <label for="email">Email</label>
                 </div>
 
                 <div class="input-box w50">
-                    <% if(locals.phone) { %>
-                        <input type="tel" name="phone" id="phone" required value="<%= phone %>">
-                        <% if (locals.phone_error) { %>
-                            <small><%= phone_error %></small>
-                        <% } %>
+                    <% if (locals.body) { %>
+                        <input type="tel" name="phone" id="phone" required value="<%= body.phone %>">
                     <% } else { %>
                         <input type="tel" name="phone" id="phone" required>
                     <% } %> 
+                    <% if (locals.errors) { %>
+                        <small><%= errors.phone %></small>
+                    <% } %>
                     <label for="phone">Téléphone</label>
                 </div>
 
                 <div class="input-box w100">
-                    <% if(locals.message_area) { %>
-                        <textarea name="message" id="message" required><%= message_area %></textarea>
+                    <% if (locals.body) { %>
+                        <textarea name="message" id="message" required><%= body.message %></textarea>
                     <% } else { %>
                         <textarea name="message" id="message" required></textarea>
                     <% } %> 
-                    <label for="message">Votre message...</label>
+                        <label for="message">Votre message...</label>
                 </div>
 
                 <div class="input-box w100">

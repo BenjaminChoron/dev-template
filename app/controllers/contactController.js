@@ -11,58 +11,32 @@ const contactController = {
             const phone = validator.isNumeric(request.body.phone);
             const message = validator.escape(request.body.message);
 
-            if(first_name) {
-                response.render('contact', { 
-                    firstname_error: `Ce champ ne doit contenir que des lettres, espaces et -`,
+            const errors = {};
+
+            if(first_name) { errors.first_name = `Ce champ ne doit contenir que des lettres, espaces et -` }
+            if(last_name) { errors.last_name = `Ce champ ne doit contenir que des lettres, espaces et -` }
+            if(!email) { errors.email = `Ce n'est pas un email valide` }
+            if(!phone) { errors.phone = `Ce champ ne doit contenir que des chiffres` }
+
+            if(Object.keys(errors).length === 0) {
+                await Message.create({
+                    from: request.body.email,
                     first_name: request.body.first_name,
                     last_name: request.body.last_name,
-                    email: request.body.email,
                     phone: request.body.phone,
-                    message_area: request.body.message
+                    content: message,
+                    seen: 'false',
                 });
+                response.render('front/contact', { message: `Votre message a été envoyé !`, done: "envoyé" });
             } else {
-                if(last_name) {
-                    response.render('contact', { 
-                        lastname_error: `Ce champ ne doit contenir que des lettres, espaces et -`,
-                        first_name: request.body.first_name,
-                        last_name: request.body.last_name,
-                        email: request.body.email,
-                        phone: request.body.phone,
-                        message_area: request.body.message
-                    });
-                } else {
-                    if(!email) {
-                        response.render('contact', { 
-                            email_error: `Ce n'est pas un email valide`,
-                            first_name: request.body.first_name,
-                            last_name: request.body.last_name,
-                            email: request.body.email,
-                            phone: request.body.phone,
-                            message_area: request.body.message
-                        });
-                    } else {
-                        if(!phone) {
-                            response.render('contact', { 
-                                phone_error: `Ce champ ne doit contenir que des chiffres`,
-                                first_name: request.body.first_name,
-                                last_name: request.body.last_name,
-                                email: request.body.email,
-                                phone: request.body.phone,
-                                message_area: request.body.message
-                            });
-                        } else {
-                            await Message.create({
-                                from: request.body.email,
-                                first_name: request.body.first_name,
-                                last_name: request.body.last_name,
-                                phone: request.body.phone,
-                                content: message,
-                                seen: 'false',
-                            });
-                            response.render('front/contact', { message: `Votre message a été envoyé !`, done: "envoyé" });
-                        }
-                    }
+                let body = {
+                    email: request.body.email,
+                    first_name: request.body.first_name,
+                    last_name: request.body.last_name,
+                    phone: request.body.phone,
+                    message: request.body.message
                 }
+                response.render('front/contact', { errors, body });
             }
         } catch(error) {
             console.log(error);
