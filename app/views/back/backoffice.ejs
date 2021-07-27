@@ -2,7 +2,7 @@
 
 <main class="main back">
     <div class="projects-box">
-        <h2>Mes projets</h2>
+        <h2 class="projects-box__title">Mes projets</h2>
         <% for(const project of projects) { %>
             <div class="projects-box__item">
                 <p><%= project.title %></p>
@@ -19,7 +19,7 @@
     </div>
 
     <div class="articles-box">
-        <h2>Mes articles</h2>
+        <h2 class="articles-box__title">Mes articles</h2>
         <% if (locals.articles) { %>
             <% for(const article of articles) { %>
                 <div class="articles-box__item">

@@ -1,38 +1,38 @@
 <%- include('partials/header') %> 
 
-<main class="main">
+<main class="main messages">
 
-    <table>
-        <thead>
-            <tr class="table-head">
-                <th>Nom</th>
-                <th>Email</th>
-                <th class="small">Reçu</th>
-                <th class="small">Action</th>
+    <table class="messages__table">
+        <thead class="messages__table__thead">
+            <tr class="messages__table__thead__tr">
+                <th class="messages__table__thead__tr__th">Nom</th>
+                <th class="messages__table__thead__tr__th">Email</th>
+                <th class="messages__table__thead__tr__th--small">Reçu</th>
+                <th class="messages__table__thead__tr__th--small">Action</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class="messages__table__tbody">
             <% if (locals.messages) { %>
                 <% for(const message of messages) { %>
-                    <tr class="seen-<%= message.seen %>">
-                        <td><%= message.first_name %> <%= message.last_name %></td>
-                        <td><%= message.from %></td>
-                        <td class="small"><%= dayjs(message.createdAt).format('Do MMMM YYYY [à] HH:mm') %></td>
-                        <td class="small">
-                            <a class="message-link" href="/admin/messages/<%= message.id %>">
-                                <img class="icon" src="/img/icons/see.svg" alt="">
+                    <tr class="messages__table__tbody__tr seen-<%= message.seen %>">
+                        <td class="messages__table__tbody__tr__td"><%= message.first_name %> <%= message.last_name %></td>
+                        <td class="messages__table__tbody__tr__td"><%= message.from %></td>
+                        <td class="messages__table__tbody__tr__td--small"><%= dayjs(message.createdAt).format('Do MMMM YYYY [à] HH:mm') %></td>
+                        <td class="messages__table__tbody__tr__td--small">
+                            <a class="messages__table__tbody__tr__td__link" href="/admin/messages/<%= message.id %>">
+                                <img class="messages__table__tbody__tr__td__link__icon" src="/img/icons/see.svg" alt="">
                             </a>
                             <% if (message.seen === false) { %>
-                                <a class="message-link" href="/admin/messages/<%= message.id %>/seen">
-                                    <img class="icon" src="/img/icons/closed-env.svg" alt="">
+                                <a class="messages__table__tbody__tr__td__link" href="/admin/messages/<%= message.id %>/seen">
+                                    <img class="messages__table__tbody__tr__td__link__icon" src="/img/icons/closed-env.svg" alt="">
                                 </a>
                             <% } else { %>
-                                <a class="message-link" href="/admin/messages/<%= message.id %>/notseen">
-                                    <img class="icon" src="/img/icons/open-env.svg" alt="">
+                                <a class="messages__table__tbody__tr__td__link" href="/admin/messages/<%= message.id %>/notseen">
+                                    <img class="messages__table__tbody__tr__td__link__icon" src="/img/icons/open-env.svg" alt="">
                                 </a>
                             <% } %>
-                            <a class="message-link" href="/admin/messages/<%= message.id %>/delete">
-                                <img class="icon" src="/img/icons/delete.svg" alt="">
+                            <a class="messages__table__tbody__tr__td__link" href="/admin/messages/<%= message.id %>/delete">
+                                <img class="messages__table__tbody__tr__td__link__icon" src="/img/icons/delete.svg" alt="">
                             </a>
                         </td>
                     </tr>

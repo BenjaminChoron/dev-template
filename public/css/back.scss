@@ -60,16 +60,21 @@ body {
 // ---------- LOGIN ---------- //
 .main.login {
     justify-content: center;
-
-    & h2 {
+}
+.login {
+    &__title {
         margin-bottom: 2rem;
     }
 
-    & form {
+    &__form {
         display: flex;
         flex-direction: column;
 
-        & input {
+        &__label {
+            margin-bottom: .4rem;
+        }
+
+        &__input {
             margin-bottom: 1rem;
             padding: .4rem;
             width: 300px;
@@ -79,6 +84,10 @@ body {
                 margin-bottom: 2rem;
             }
         }
+    }
+
+    &__link {
+        text-decoration: none;
     }
 }
 
@@ -121,7 +130,7 @@ body {
                     position: relative;
                     height: 30px;
                 
-                    & .badge {
+                    &__badge {
                         position: absolute;
                         bottom: 0;
                         right: 0;
@@ -131,12 +140,12 @@ body {
                         padding: 0 .3rem;
                     }
                 
-                    & img {
+                    &__img {
                         height: 100%;
                     }
                 }
 
-                & img {
+                &__img {
                     height: 30px;
                 }
             }
@@ -154,7 +163,7 @@ body {
 }
 .projects-box, .articles-box {
     margin: 2rem;
-    & h2 {
+    &__title {
         margin: 1rem 0;
     }
     &__item {
@@ -186,56 +195,78 @@ body {
 
 
 // ---------- MESSAGES ---------- //
-table {
-    border-collapse: collapse;
-    margin: 1rem;
-    border-radius: .4rem;
-    overflow: hidden;
-    background-color: $white;
-    box-shadow: 0 0 10px $black;
-    width: 90%;
-}
-tr {
-    display: flex;
-    border-bottom: 1px solid rgba(128, 128, 128, 0.276);
+.messages {
+    &__table {
+        border-collapse: collapse;
+        margin: 1rem;
+        border-radius: .4rem;
+        overflow: hidden;
+        background-color: $white;
+        box-shadow: 0 0 10px $black;
+        width: 90%;
 
-    &:last-child {
-        border-bottom: none;
+        &__thead {
+            border-bottom: 1px solid rgba(128, 128, 128, 0.276);
+            &__tr {
+                display: flex;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                &__th {
+                    padding: 1rem;
+                    text-align: center;
+                    flex: 3;
+
+                    &--small {
+                        padding: 1rem;
+                        text-align: center;
+                        flex: 1;
+                    }
+                }
+            }
+        }
+
+        &__tbody {
+            &__tr {
+                display: flex;
+                border-bottom: 1px solid rgba(128, 128, 128, 0.276);
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                &__td {
+                    padding: 1rem;
+                    text-align: center;
+                    flex: 3;
+
+                    &--small {
+                        padding: 1rem;
+                        text-align: center;
+                        flex: 1;
+                    }
+
+                    &__link {
+                        margin: 0 .3rem;
+                        text-decoration: none;
+
+                        &__icon {
+                            width: 20px;
+                            transition: .3s;
+
+                            &:hover {
+                                transform: scale(1.2);
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
-th {
-    padding: 1rem;
-    text-align: center;
-    flex: 3;
 
-    &.small {
-        flex: 1;
-        text-align: center;
-    }
-}
-td {
-    padding: 1rem;
-    text-align: left;
-    border-right: 1px solid rgba(128, 128, 128, 0.276);
-    flex: 3;
-
-    &:last-child {
-        border-right: none;
-    }
-
-    &.small {
-        flex: 1;
-        text-align: center;
-    }
-}
-.icon {
-    width: 20px;
-    transition: .3s;
-
-    &:hover {
-        transform: scale(1.2);
-    }
-}
 .seen-true {
     background-color: $white;
 }
@@ -251,6 +282,7 @@ td {
 }
 
 .message-box {
+    min-width: 300px;
     display: flex;
     flex-direction: column;
     background-color: $white;
@@ -265,7 +297,7 @@ td {
         padding-bottom: .4rem;
         border-bottom: 1px solid rgba(128, 128, 128, 0.276);
 
-        & p {
+        &__p {
             margin: 0 1rem;
         }
     }
@@ -276,10 +308,13 @@ td {
         font-style: italic;
         padding: .4rem 1rem;
 
-        & p {
+        &__p {
             display: flex;
             align-items: center;
-            & img {
+            margin: 0 .4rem;
+
+            &__icon {
+                width: 20px;
                 margin-right: .4rem;
             }
         }
@@ -287,54 +322,59 @@ td {
     &__content {
         padding-bottom: 2rem;
     }
-    & .links-box {
+    &__links-box {
         display: flex;
         justify-content: space-evenly;
         background-color: rgba(128, 128, 128, 0.125);
         padding: .8rem;
         border-radius: .4rem;
 
-        & a img {
-            transition: .3s;
-
-            &:hover {
-                transform: scale(1.2);
+        &__link {
+            &__icon {
+                width: 20px;
+                transition: .3s;
+    
+                &:hover {
+                    transform: scale(1.2);
+                }
             }
         }
         
     }
-}
-.message-link {
-    margin: 0 .3rem;
-    text-decoration: none;
 }
 
 
 
 // ---------- CREATE PROJECT ---------- //
 .main.create-project {
-    justify-content: center;
-
-    & h2 {
+    justify-content: center; 
+}
+.create-project {
+    &__title {
         margin-bottom: 2rem;
     }
 
-    & form {
+    &__form {
         display: flex;
         flex-direction: column;
 
-        & input, & textarea {
-            margin-bottom: 1rem;
+        &__label {
+            margin: .6rem .4rem;
+        }
+
+        &__input, &__textarea {
             padding: .4rem;
-            width: 300px;
+            width: 100%;
 
             &[type = submit] {
                 cursor: pointer;
-                margin-bottom: 2rem;
+                margin-top: 2rem;
+                width: 50%;
+                align-self: center;
             }
         }
 
-        & textarea {
+        &__textarea {
             height: 200px;
         }
     }
@@ -346,26 +386,35 @@ td {
 .main.create-article {
     justify-content: center;
     padding: 2rem;
+}
 
-    & h2 {
+.create-article {
+    &__title {
         margin-bottom: 2rem;
     }
 
-    & .create-article-form {
+    &__form {
         display: flex;
         flex-direction: column;
-        align-items: center;
 
-        &__input {
-            margin-bottom: 1rem;
-            padding: .4rem;
-            width: 400px;
+        &__label {
+            margin: .6rem .4rem;
         }
 
-        &__submit {
-            margin-top: 1rem;
+        &__input, &__textarea {
             padding: .4rem;
-            cursor: pointer;
+            width: 100%;
+
+            &[type = submit] {
+                cursor: pointer;
+                margin-top: 2rem;
+                width: 50%;
+                align-self: center;
+            }
+        }
+
+        &__textarea {
+            height: 200px;
         }
     }
 }

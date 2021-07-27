@@ -1,28 +1,28 @@
 <%- include('partials/header') %> 
 
 <main class="main create-project">
-    <h2>Nouveau projet</h2>
+    <h2 class="create-project__title">Nouveau projet</h2>
 
-    <form action="/admin/project/create" method="POST">
-        <label for="title">Titre</label>
-        <input type="text" name="title" id="title">
+    <form class="create-project__form" action="/admin/project/create" method="POST">
+        <label class="create-project__form__label" for="title">Titre</label>
+        <input class="create-project__form__input" type="text" name="title" id="title">
 
-        <label for="image">Image</label>
-        <input type="text" name="image" id="image">
+        <label class="create-project__form__label" for="image">Image</label>
+        <input class="create-project__form__input" type="text" name="image" id="image">
 
-        <label for="basic-content">Contenu générique</label>
-        <textarea class="create-article-form__textarea" name="basic_content" id="editor"></textarea>
+        <label class="create-project__form__label" for="basic-content">Contenu générique</label>
+        <textarea class="create-project__form__textarea" name="basic_content" id="editor"></textarea>
 
-        <label for="tech-content">Contenu technique</label>
-        <textarea class="create-article-form__textarea" name="tech_content" id="editor-tech"></textarea>
+        <label class="create-project__form__label" for="tech-content">Contenu technique</label>
+        <textarea class="create-project__form__textarea" name="tech_content" id="editor-tech"></textarea>
 
-        <label for="web">Lien Web</label>
-        <input type="text" name="web" id="web">
+        <label class="create-project__form__label" for="web">Lien Web</label>
+        <input class="create-project__form__input" type="text" name="web" id="web">
 
-        <label for="github">Lien Github</label>
-        <input type="text" name="github" id="github">
+        <label class="create-project__form__label" for="github">Lien Github</label>
+        <input class="create-project__form__input" type="text" name="github" id="github">
 
-        <input type="submit" value="Créer">
+        <input class="create-project__form__input" type="submit" value="Créer">
     </form>
 </main>
 

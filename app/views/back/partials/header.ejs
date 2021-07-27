@@ -19,31 +19,31 @@
                     <ul class="header__nav__ul">
                         <li class="header__nav__ul__li">
                             <a href="/" target="_blank">
-                                <img src="/img/icons/earth.svg" alt="">
+                                <img class="header__nav__ul__li__img" src="/img/icons/earth.svg" alt="">
                             </a>
                         </li>
                         <li class="header__nav__ul__li">
                             <a href="/admin/messages">
                                 <% if (notSeen.length > 0) { %>
                                     <div class="receivedMessages">
-                                        <span class="badge"><%= notSeen.length %></span>
-                                        <img src="/img/icons/mailbox.svg" alt="">
+                                        <span class="receivedMessages__badge"><%= notSeen.length %></span>
+                                        <img class="receivedMessages__img" src="/img/icons/mailbox.svg" alt="">
                                     </div>
                                 <% } else { %>
                                     <div class="receivedMessages">
-                                        <img src="/img/icons/postbox.svg" alt="">
+                                        <img class="receivedMessages__img" src="/img/icons/postbox.svg" alt="">
                                     </div>
                                 <% } %> 
                             </a>
                         </li>
                         <li class="header__nav__ul__li">
                             <a href="/admin/project/create">
-                                <img src="/img/icons/work.svg" alt="">
+                                <img class="header__nav__ul__li__img" src="/img/icons/work.svg" alt="">
                             </a>
                         </li>
                         <li class="header__nav__ul__li">
                             <a href="/admin/articles/create">
-                                <img src="/img/icons/notes.svg" alt="">
+                                <img class="header__nav__ul__li__img" src="/img/icons/notes.svg" alt="">
                             </a>
                         </li>
                     </ul>

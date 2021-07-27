@@ -23,21 +23,28 @@ body {
 .main.login {
   justify-content: center;
 }
-.main.login h2 {
+
+.login__title {
   margin-bottom: 2rem;
 }
-.main.login form {
+.login__form {
   display: flex;
   flex-direction: column;
 }
-.main.login form input {
+.login__form__label {
+  margin-bottom: 0.4rem;
+}
+.login__form__input {
   margin-bottom: 1rem;
   padding: 0.4rem;
   width: 300px;
 }
-.main.login form input[type=submit] {
+.login__form__input[type=submit] {
   cursor: pointer;
   margin-bottom: 2rem;
+}
+.login__link {
+  text-decoration: none;
 }
 
 .header {
@@ -78,7 +85,7 @@ body {
   position: relative;
   height: 30px;
 }
-.header__nav__ul__li .receivedMessages .badge {
+.header__nav__ul__li .receivedMessages__badge {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -87,10 +94,10 @@ body {
   border-radius: 50%;
   padding: 0 0.3rem;
 }
-.header__nav__ul__li .receivedMessages img {
+.header__nav__ul__li .receivedMessages__img {
   height: 100%;
 }
-.header__nav__ul__li img {
+.header__nav__ul__li__img {
   height: 30px;
 }
 
@@ -103,7 +110,7 @@ body {
 .projects-box, .articles-box {
   margin: 2rem;
 }
-.projects-box h2, .articles-box h2 {
+.projects-box__title, .articles-box__title {
   margin: 1rem 0;
 }
 .projects-box__item, .articles-box__item {
@@ -129,7 +136,7 @@ body {
   margin: 0 0.3rem;
 }
 
-table {
+.messages__table {
   border-collapse: collapse;
   margin: 1rem;
   border-radius: 0.4rem;
@@ -138,44 +145,51 @@ table {
   box-shadow: 0 0 10px #333;
   width: 90%;
 }
-
-tr {
+.messages__table__thead {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.276);
+}
+.messages__table__thead__tr {
+  display: flex;
+}
+.messages__table__thead__tr:last-child {
+  border-bottom: none;
+}
+.messages__table__thead__tr__th {
+  padding: 1rem;
+  text-align: center;
+  flex: 3;
+}
+.messages__table__thead__tr__th--small {
+  padding: 1rem;
+  text-align: center;
+  flex: 1;
+}
+.messages__table__tbody__tr {
   display: flex;
   border-bottom: 1px solid rgba(128, 128, 128, 0.276);
 }
-tr:last-child {
+.messages__table__tbody__tr:last-child {
   border-bottom: none;
 }
-
-th {
+.messages__table__tbody__tr__td {
   padding: 1rem;
   text-align: center;
   flex: 3;
 }
-th.small {
-  flex: 1;
-  text-align: center;
-}
-
-td {
+.messages__table__tbody__tr__td--small {
   padding: 1rem;
-  text-align: left;
-  border-right: 1px solid rgba(128, 128, 128, 0.276);
-  flex: 3;
-}
-td:last-child {
-  border-right: none;
-}
-td.small {
-  flex: 1;
   text-align: center;
+  flex: 1;
 }
-
-.icon {
+.messages__table__tbody__tr__td__link {
+  margin: 0 0.3rem;
+  text-decoration: none;
+}
+.messages__table__tbody__tr__td__link__icon {
   width: 20px;
   transition: 0.3s;
 }
-.icon:hover {
+.messages__table__tbody__tr__td__link__icon:hover {
   transform: scale(1.2);
 }
 
@@ -192,6 +206,7 @@ td.small {
 }
 
 .message-box {
+  min-width: 300px;
   display: flex;
   flex-direction: column;
   background-color: #f1f1f1;
@@ -206,7 +221,7 @@ td.small {
   padding-bottom: 0.4rem;
   border-bottom: 1px solid rgba(128, 128, 128, 0.276);
 }
-.message-box__infos p {
+.message-box__infos__p {
   margin: 0 1rem;
 }
 .message-box__contact {
@@ -216,55 +231,58 @@ td.small {
   font-style: italic;
   padding: 0.4rem 1rem;
 }
-.message-box__contact p {
+.message-box__contact__p {
   display: flex;
   align-items: center;
+  margin: 0 0.4rem;
 }
-.message-box__contact p img {
+.message-box__contact__p__icon {
+  width: 20px;
   margin-right: 0.4rem;
 }
 .message-box__content {
   padding-bottom: 2rem;
 }
-.message-box .links-box {
+.message-box__links-box {
   display: flex;
   justify-content: space-evenly;
   background-color: rgba(128, 128, 128, 0.125);
   padding: 0.8rem;
   border-radius: 0.4rem;
 }
-.message-box .links-box a img {
+.message-box__links-box__link__icon {
+  width: 20px;
   transition: 0.3s;
 }
-.message-box .links-box a img:hover {
+.message-box__links-box__link__icon:hover {
   transform: scale(1.2);
-}
-
-.message-link {
-  margin: 0 0.3rem;
-  text-decoration: none;
 }
 
 .main.create-project {
   justify-content: center;
 }
-.main.create-project h2 {
+
+.create-project__title {
   margin-bottom: 2rem;
 }
-.main.create-project form {
+.create-project__form {
   display: flex;
   flex-direction: column;
 }
-.main.create-project form input, .main.create-project form textarea {
-  margin-bottom: 1rem;
+.create-project__form__label {
+  margin: 0.6rem 0.4rem;
+}
+.create-project__form__input, .create-project__form__textarea {
   padding: 0.4rem;
-  width: 300px;
+  width: 100%;
 }
-.main.create-project form input[type=submit], .main.create-project form textarea[type=submit] {
+.create-project__form__input[type=submit], .create-project__form__textarea[type=submit] {
   cursor: pointer;
-  margin-bottom: 2rem;
+  margin-top: 2rem;
+  width: 50%;
+  align-self: center;
 }
-.main.create-project form textarea {
+.create-project__form__textarea {
   height: 200px;
 }
 
@@ -272,23 +290,29 @@ td.small {
   justify-content: center;
   padding: 2rem;
 }
-.main.create-article h2 {
+
+.create-article__title {
   margin-bottom: 2rem;
 }
-.main.create-article .create-article-form {
+.create-article__form {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
-.main.create-article .create-article-form__input {
-  margin-bottom: 1rem;
-  padding: 0.4rem;
-  width: 400px;
+.create-article__form__label {
+  margin: 0.6rem 0.4rem;
 }
-.main.create-article .create-article-form__submit {
-  margin-top: 1rem;
+.create-article__form__input, .create-article__form__textarea {
   padding: 0.4rem;
+  width: 100%;
+}
+.create-article__form__input[type=submit], .create-article__form__textarea[type=submit] {
   cursor: pointer;
+  margin-top: 2rem;
+  width: 50%;
+  align-self: center;
+}
+.create-article__form__textarea {
+  height: 200px;
 }
 
 .footer {
