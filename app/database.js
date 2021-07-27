@@ -1,5 +1,6 @@
 const {Sequelize} = require('sequelize');
 
+// pour usage en ligne sur Heroku
 if (process.env.DATABASE_URL) {
     sequelize = new Sequelize(process.env.DATABASE_URL, {
         dialect: 'postgres',
@@ -16,7 +17,7 @@ if (process.env.DATABASE_URL) {
         logging: false
     });
     console.log('Connected with DATABASE_URL');
-} else {
+} else { // pour usage local
     sequelize = new Sequelize(process.env.PG_URL, {
         define: {
             underscored: true
