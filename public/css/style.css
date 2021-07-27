@@ -398,3 +398,11 @@ body {
           color: #f1f1f1; }
         .contact-form .form-box .input-box input[type="submit"]:hover {
           background-color: black; }
+
+.error__img {
+  width: 40%;
+  min-width: 300px; }
+
+.error__text {
+  margin: 2rem;
+  font-size: 1.2rem; }

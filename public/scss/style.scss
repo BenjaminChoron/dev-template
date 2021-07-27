@@ -516,3 +516,19 @@ body {
         }
     }
 }
+
+
+
+
+// ----------------  ERROR  ----------------
+.error {
+    &__img {
+        width: 40%;
+        min-width: 300px;
+    }
+
+    &__text {
+        margin: 2rem;
+        font-size: 1.2rem;
+    }
+}

@@ -45,6 +45,10 @@ app.use((req, res, next) => {
 
 app.use(router);
 
+app.use(function(req, res, next) {
+    res.render('front/404', { url: req.url });
+});
+
 app.listen(port, () => {
     console.log(`App listening at http://localhost:${port}`)
 })
