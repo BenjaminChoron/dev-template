@@ -1,23 +1,26 @@
 <%- include('partials/header') %> 
 
-<main class="main create-work">
+<main class="main create-project">
     <h2>Modifier le project</h2>
 
-    <form action="/admin/work/<%= work.id %>/update" method="POST">
+    <form action="/admin/project/<%= project.id %>/update" method="POST">
         <label for="title">Titre</label>
-        <input type="text" name="title" id="title" value="<%= work.title %>">
+        <input type="text" name="title" id="title" value="<%= project.title %>">
 
         <label for="image">Image</label>
-        <input type="text" name="image" id="image" value="<%= work.image %>">
+        <input type="text" name="image" id="image" value="<%= project.image %>">
 
-        <label for="content">Description</label>
-        <textarea name="content" id="content"><%= work.content %></textarea>
+        <label for="basic-content">Contenu générique</label>
+        <textarea class="create-article-form__textarea" name="basic_content" id="editor"><%= project.basic_content %></textarea>
+
+        <label for="tech-content">Contenu technique</label>
+        <textarea class="create-article-form__textarea" name="tech_content" id="editor-tech"><%= project.tech_content %></textarea>
 
         <label for="web">Lien Web</label>
-        <input type="text" name="web" id="web" value="<%= work.see_link %>">
+        <input type="text" name="web" id="web" value="<%= project.see_link %>">
 
         <label for="github">Lien Github</label>
-        <input type="text" name="github" id="github" value="<%= work.github_link %>">
+        <input type="text" name="github" id="github" value="<%= project.github_link %>">
 
         <input type="submit" value="Modifier">
     </form>

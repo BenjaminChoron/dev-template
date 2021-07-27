@@ -168,9 +168,11 @@ body {
   padding: 0 1rem;
   text-align: center;
 }
-.projects-container .card .content p {
+.projects-container .card .content .project-versions {
   position: relative;
   top: -20px;
+  border: 1px solid #333;
+  border-radius: 0.4rem;
 }
 .projects-container .card .content .btn-box {
   display: flex;

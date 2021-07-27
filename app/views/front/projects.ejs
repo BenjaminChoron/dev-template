@@ -11,7 +11,12 @@
                     <div class="imgBx" style="background-image: url('<%= project.image %>');"></div>
                     <div class="content">
                         <h3 class="content__title"><%= project.title %></h3>
-                        <p><%- project.content %></p>
+
+                        <div class="project-versions">
+                            <h4>Versions</h4>
+                            <a href="#">Générique</a>
+                            <a href="#">Technique</a>
+                        </div>
 
                         <div class="btn-box">
                             <% if (project.see_link !== null && project.see_link !== '') { %>

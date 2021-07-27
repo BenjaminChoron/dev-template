@@ -12,7 +12,11 @@ Project.init({
         type: DataTypes.TEXT,
         allowNull: false
     },
-    content: {
+    basic_content: {
+        type: DataTypes.TEXT,
+        allowNull: false
+    },
+    tech_content: {
         type: DataTypes.TEXT,
         allowNull: false
     },

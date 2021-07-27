@@ -221,9 +221,17 @@ body {
             padding: 0 1rem;
             text-align: center;
 
-            & p {
+            & .project-versions {
                 position: relative;
                 top: -20px;
+                border: 1px solid $black;
+                border-radius: .4rem;
+                & h4 {
+
+                }
+                & a {
+
+                }
             }
 
             & .btn-box {

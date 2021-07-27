@@ -24,8 +24,12 @@ const mainController = {
     },
 
     getOneArticle: async (req, res) => {
-        const article = await Article.findByPk(req.params.id);
-        res.render('front/article', { article });
+        try {
+            const article = await Article.findByPk(req.params.id);
+            res.render('front/article', { article });
+        } catch(error) {
+            console.log(error);
+        }
     },
 
     getContactPage : (req, res) => {
@@ -33,5 +37,5 @@ const mainController = {
     },
 };
 
-// on l'exporte pour le rendre accessible dans d'autres fichiers
+
 module.exports = mainController;

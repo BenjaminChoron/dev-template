@@ -5,13 +5,136 @@
         Not connected
     <% } %> 
 </footer>
-<script>
-    ClassicEditor
-        .create( document.querySelector( '#editor' ) )
-        .catch( error => {
-            console.error( error );
-        } );
-</script>
+<script src="/ckeditor5/build/ckeditor.js"></script>
+
+		<script>ClassicEditor
+				.create( document.querySelector( '#editor' ), {
+					
+				toolbar: {
+					items: [
+						'heading',
+						'|',
+						'fontColor',
+						'bold',
+						'italic',
+						'link',
+						'bulletedList',
+						'numberedList',
+						'|',
+						'alignment',
+						'outdent',
+						'indent',
+						'|',
+						'code',
+						'codeBlock',
+						'imageInsert',
+						'blockQuote',
+						'insertTable',
+						'undo',
+						'redo'
+					]
+				},
+				language: 'fr',
+				image: {
+					toolbar: [
+						'imageTextAlternative',
+						'imageStyle:inline',
+						'imageStyle:block',
+						'imageStyle:side',
+						'linkImage'
+					]
+				},
+				table: {
+					contentToolbar: [
+						'tableColumn',
+						'tableRow',
+						'mergeTableCells'
+					]
+				},
+					licenseKey: '',
+					
+					
+					
+				} )
+				.then( editor => {
+					window.editor = editor;
+			
+					
+					
+					
+				} )
+				.catch( error => {
+					console.error( 'Oops, something went wrong!' );
+					console.error( 'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:' );
+					console.warn( 'Build id: jo7nicry4l35-htwdx32bhjrb' );
+					console.error( error );
+				} );
+		</script>
+
+        <script>ClassicEditor
+            .create( document.querySelector( '#editor-tech' ), {
+                
+            toolbar: {
+                items: [
+                    'heading',
+                    '|',
+                    'fontColor',
+                    'bold',
+                    'italic',
+                    'link',
+                    'bulletedList',
+                    'numberedList',
+                    '|',
+                    'alignment',
+                    'outdent',
+                    'indent',
+                    '|',
+                    'code',
+                    'codeBlock',
+                    'imageInsert',
+                    'blockQuote',
+                    'insertTable',
+                    'undo',
+                    'redo'
+                ]
+            },
+            language: 'fr',
+            image: {
+                toolbar: [
+                    'imageTextAlternative',
+                    'imageStyle:inline',
+                    'imageStyle:block',
+                    'imageStyle:side',
+                    'linkImage'
+                ]
+            },
+            table: {
+                contentToolbar: [
+                    'tableColumn',
+                    'tableRow',
+                    'mergeTableCells'
+                ]
+            },
+                licenseKey: '',
+                
+                
+                
+            } )
+            .then( editor => {
+                window.editor = editor;
+        
+                
+                
+                
+            } )
+            .catch( error => {
+                console.error( 'Oops, something went wrong!' );
+                console.error( 'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:' );
+                console.warn( 'Build id: jo7nicry4l35-htwdx32bhjrb' );
+                console.error( error );
+            } );
+    </script>
+
 <script src="/js/back.js"></script>
 <noscript>Javascript is unactive. This page may not work properly.</noscript>
 </body>
