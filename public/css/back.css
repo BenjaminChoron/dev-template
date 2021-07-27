@@ -112,12 +112,14 @@ body {
   align-items: center;
   padding: 0.6rem;
   margin: 0.6rem;
+  background-color: #f1f1f1;
   box-shadow: 0 0 30px #333;
   border-radius: 0.4rem;
   transition: 0.3s;
 }
 .projects-box__item:hover, .articles-box__item:hover {
   background-color: #333;
+  color: #f1f1f1;
 }
 .projects-box__item__icons, .articles-box__item__icons {
   margin-left: 1rem;
@@ -125,6 +127,168 @@ body {
 .projects-box__item__icons__link, .articles-box__item__icons__link {
   text-decoration: none;
   margin: 0 0.3rem;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 1rem;
+  border-radius: 0.4rem;
+  overflow: hidden;
+  background-color: #f1f1f1;
+  box-shadow: 0 0 10px #333;
+  width: 90%;
+}
+
+tr {
+  display: flex;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.276);
+}
+tr:last-child {
+  border-bottom: none;
+}
+
+th {
+  padding: 1rem;
+  text-align: center;
+  flex: 3;
+}
+th.small {
+  flex: 1;
+  text-align: center;
+}
+
+td {
+  padding: 1rem;
+  text-align: left;
+  border-right: 1px solid rgba(128, 128, 128, 0.276);
+  flex: 3;
+}
+td:last-child {
+  border-right: none;
+}
+td.small {
+  flex: 1;
+  text-align: center;
+}
+
+.icon {
+  width: 20px;
+  transition: 0.3s;
+}
+.icon:hover {
+  transform: scale(1.2);
+}
+
+.seen-true {
+  background-color: #f1f1f1;
+}
+
+.seen-false {
+  background-color: #53B8BB;
+}
+
+.main.message {
+  justify-content: center;
+}
+
+.message-box {
+  display: flex;
+  flex-direction: column;
+  background-color: #f1f1f1;
+  box-shadow: 0 0 10px #333;
+  margin: 2rem;
+  padding: 1rem;
+  border-radius: 0.4rem;
+}
+.message-box__infos {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.276);
+}
+.message-box__infos p {
+  margin: 0 1rem;
+}
+.message-box__contact {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-style: italic;
+  padding: 0.4rem 1rem;
+}
+.message-box__contact p {
+  display: flex;
+  align-items: center;
+}
+.message-box__contact p img {
+  margin-right: 0.4rem;
+}
+.message-box__content {
+  padding-bottom: 2rem;
+}
+.message-box .links-box {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: rgba(128, 128, 128, 0.125);
+  padding: 0.8rem;
+  border-radius: 0.4rem;
+}
+.message-box .links-box a img {
+  transition: 0.3s;
+}
+.message-box .links-box a img:hover {
+  transform: scale(1.2);
+}
+
+.message-link {
+  margin: 0 0.3rem;
+  text-decoration: none;
+}
+
+.main.create-project {
+  justify-content: center;
+}
+.main.create-project h2 {
+  margin-bottom: 2rem;
+}
+.main.create-project form {
+  display: flex;
+  flex-direction: column;
+}
+.main.create-project form input, .main.create-project form textarea {
+  margin-bottom: 1rem;
+  padding: 0.4rem;
+  width: 300px;
+}
+.main.create-project form input[type=submit], .main.create-project form textarea[type=submit] {
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+.main.create-project form textarea {
+  height: 200px;
+}
+
+.main.create-article {
+  justify-content: center;
+  padding: 2rem;
+}
+.main.create-article h2 {
+  margin-bottom: 2rem;
+}
+.main.create-article .create-article-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main.create-article .create-article-form__input {
+  margin-bottom: 1rem;
+  padding: 0.4rem;
+  width: 400px;
+}
+.main.create-article .create-article-form__submit {
+  margin-top: 1rem;
+  padding: 0.4rem;
+  cursor: pointer;
 }
 
 .footer {

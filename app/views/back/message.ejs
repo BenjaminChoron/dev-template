@@ -1,0 +1,37 @@
+<%- include('partials/header') %> 
+
+<main class="main message">
+
+    <div class="message-box">
+        <div class="message-box__infos">
+            <p><%= message.first_name %> <%= message.last_name %></p>
+            <p><%= dayjs(message.createdAt).format('Do MMMM YYYY [à] HH:mm') %></p>
+        </div>
+        <div class="message-box__contact">
+            <p><img class="icon" src="/img/icons/arroba.svg" alt=""> <%= message.from %></p>
+            <p><img class="icon" src="/img/icons/telephone.svg" alt=""> <%= message.phone %></p>
+        </div>
+        <div class="message-box__content">
+            <p><%= message.content %></p>
+        </div>
+        <div class="links-box">
+            <% if (message.seen === false) { %>
+                <a class="message-link" href="/admin/messages/<%= message.id %>/seen">
+                    <img class="icon" src="/img/icons/closed-env.svg" alt="">
+                </a>
+            <% } else { %>
+                <a class="message-link" href="/admin/messages/<%= message.id %>/notseen">
+                    <img class="icon" src="/img/icons/open-env.svg" alt="">
+                </a>
+            <% } %>
+            <a class="message-link" href="/admin/messages/<%= message.id %>/delete">
+                <img class="icon" src="/img/icons/delete.svg" alt="">
+            </a>
+        </div>
+    </div>
+
+    
+
+</main>
+
+<%- include('partials/footer') %> 

@@ -163,3 +163,102 @@ body {
         }
     }
 }
+
+
+
+// ----------------  CONTACT  ----------------
+.contact-form {
+    margin: 1rem;
+    padding: 3rem 2rem;
+    background-color: $colorOne;
+    width: 90%;
+    box-shadow: 0 50px 50px rgba(0, 0, 0, .5);
+    border-radius: .4rem;
+
+    & h2 {
+        color: $white;
+        font-size: 2rem;
+    }
+
+    & .submit-message {
+        text-align: center;
+        color: $white;
+    }
+
+    & .form-box {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding-top: 2rem;
+
+        & .input-box {
+            position: relative;
+            margin-bottom: 1.6rem;
+
+            &.w50 {
+                width: 47%;
+            }
+
+            &.w100 {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+
+            & input, textarea {
+                width: 100%;
+                padding: 5px;
+                font-size: 18px;
+                font-weight: 100;
+                resize: none;
+                background-color: $colorOne;
+                color: $white;
+                border: none;
+                border-bottom: 1px solid $white;
+                outline: none;
+            }
+
+            & small {
+                color: crimson;
+            }
+
+            & textarea {
+                min-height: 120px;
+            }
+
+            & label {
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: 5px;
+                font-size: 18px;
+                font-weight: 300;
+                color: $white;
+                transition: .3s;
+                pointer-events: none;
+            }
+
+            & input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid ~ label {
+                transform: translateY(-20px);
+                font-size: 16px;
+                color: $colorThree;
+            }
+
+            & input[type="submit"] {
+                cursor: pointer;
+                background-color: $colorTwo;
+                color: $white;
+                border: none;
+                border-radius: .4em;
+                max-width: 150px;
+                padding: 12px;
+                transition: .3s;
+
+                &:hover {
+                    background-color: $colorThree;
+                }
+            }
+        }
+    }
+}

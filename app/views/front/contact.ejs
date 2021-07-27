@@ -1,7 +1,78 @@
 <%- include('partials/header') %>
 
 <main class="main contact">
-    <h1>Contact</h1>
+    <div class="contact-form">
+        <h2>Me contacter</h2>
+
+        <% if (locals.message) { %>
+            <p class="submit-message"><%= message %></p>
+        <% } %>
+
+        <% if (!locals.done) { %>
+            <form action="/contact" method="POST" class="form-box">
+                <div class="input-box w50">
+                    <% if(locals.first_name) { %>
+                        <input type="text" name="first_name" id="first_name" required value="<%= first_name %>">
+                        <% if (locals.firstname_error) { %>
+                            <small><%= firstname_error %></small>
+                        <% } %>
+                    <% } else { %>
+                        <input type="text" name="first_name" id="first_name" required>
+                    <% } %> 
+                    <label for="first_name">Prénom</label>
+                </div>
+
+                <div class="input-box w50">
+                    <% if(locals.last_name) { %>
+                        <input type="text" name="last_name" id="last_name" required value="<%= last_name %>"> 
+                        <% if (locals.lastname_error) { %>
+                            <small><%= lastname_error %></small>
+                        <% } %>
+                    <% } else { %>
+                    <input type="text" name="last_name" id="last_name" required>
+                    <% } %> 
+                    <label for="last_name">Nom</label>
+                </div>
+
+                <div class="input-box w50">
+                    <% if(locals.email) { %>
+                        <input type="email" name="email" id="email" required value="<%= email %>"> 
+                        <% if (locals.email_error) { %>
+                            <small><%= email_error %></small>
+                        <% } %>
+                    <% } else { %>
+                        <input type="email" name="email" id="email" required>
+                    <% } %> 
+                    <label for="email">Email</label>
+                </div>
+
+                <div class="input-box w50">
+                    <% if(locals.phone) { %>
+                        <input type="tel" name="phone" id="phone" required value="<%= phone %>">
+                        <% if (locals.phone_error) { %>
+                            <small><%= phone_error %></small>
+                        <% } %>
+                    <% } else { %>
+                        <input type="tel" name="phone" id="phone" required>
+                    <% } %> 
+                    <label for="phone">Téléphone</label>
+                </div>
+
+                <div class="input-box w100">
+                    <% if(locals.message_area) { %>
+                        <textarea name="message" id="message" required><%= message_area %></textarea>
+                    <% } else { %>
+                        <textarea name="message" id="message" required></textarea>
+                    <% } %> 
+                    <label for="message">Votre message...</label>
+                </div>
+
+                <div class="input-box w100">
+                    <input type="submit" value="Envoyer">
+                </div>
+            </form>
+        <% } %>
+    </div>
 </main>
 
 <%- include('partials/footer') %>

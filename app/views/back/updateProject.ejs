@@ -1,0 +1,26 @@
+<%- include('partials/header') %> 
+
+<main class="main create-work">
+    <h2>Modifier le project</h2>
+
+    <form action="/admin/work/<%= work.id %>/update" method="POST">
+        <label for="title">Titre</label>
+        <input type="text" name="title" id="title" value="<%= work.title %>">
+
+        <label for="image">Image</label>
+        <input type="text" name="image" id="image" value="<%= work.image %>">
+
+        <label for="content">Description</label>
+        <textarea name="content" id="content"><%= work.content %></textarea>
+
+        <label for="web">Lien Web</label>
+        <input type="text" name="web" id="web" value="<%= work.see_link %>">
+
+        <label for="github">Lien Github</label>
+        <input type="text" name="github" id="github" value="<%= work.github_link %>">
+
+        <input type="submit" value="Modifier">
+    </form>
+</main>
+
+<%- include('partials/footer') %> 

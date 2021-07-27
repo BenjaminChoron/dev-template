@@ -122,4 +122,87 @@ body {
 }
 .nav__list__item:hover {
   transform: scale(1.2);
+}
+
+.contact-form {
+  margin: 1rem;
+  padding: 3rem 2rem;
+  background-color: #003638;
+  width: 90%;
+  box-shadow: 0 50px 50px rgba(0, 0, 0, 0.5);
+  border-radius: 0.4rem;
+}
+.contact-form h2 {
+  color: #f1f1f1;
+  font-size: 2rem;
+}
+.contact-form .submit-message {
+  text-align: center;
+  color: #f1f1f1;
+}
+.contact-form .form-box {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 2rem;
+}
+.contact-form .form-box .input-box {
+  position: relative;
+  margin-bottom: 1.6rem;
+}
+.contact-form .form-box .input-box.w50 {
+  width: 47%;
+}
+.contact-form .form-box .input-box.w100 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.contact-form .form-box .input-box input, .contact-form .form-box .input-box textarea {
+  width: 100%;
+  padding: 5px;
+  font-size: 18px;
+  font-weight: 100;
+  resize: none;
+  background-color: #003638;
+  color: #f1f1f1;
+  border: none;
+  border-bottom: 1px solid #f1f1f1;
+  outline: none;
+}
+.contact-form .form-box .input-box small {
+  color: crimson;
+}
+.contact-form .form-box .input-box textarea {
+  min-height: 120px;
+}
+.contact-form .form-box .input-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 5px;
+  font-size: 18px;
+  font-weight: 300;
+  color: #f1f1f1;
+  transition: 0.3s;
+  pointer-events: none;
+}
+.contact-form .form-box .input-box input:focus ~ label, .contact-form .form-box .input-box textarea:focus ~ label, .contact-form .form-box .input-box input:valid ~ label, .contact-form .form-box .input-box textarea:valid ~ label {
+  transform: translateY(-20px);
+  font-size: 16px;
+  color: #53B8BB;
+}
+.contact-form .form-box .input-box input[type=submit] {
+  cursor: pointer;
+  background-color: #055052;
+  color: #f1f1f1;
+  border: none;
+  border-radius: 0.4em;
+  max-width: 150px;
+  padding: 12px;
+  transition: 0.3s;
+}
+.contact-form .form-box .input-box input[type=submit]:hover {
+  background-color: #53B8BB;
 }/*# sourceMappingURL=style.css.map */

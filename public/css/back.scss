@@ -163,12 +163,14 @@ body {
         align-items: center;
         padding: .6rem;
         margin: .6rem;
+        background-color: $white;
         box-shadow: 0 0 30px $black;
         border-radius: .4rem;
         transition: .3s;
 
         &:hover {
             background-color: $black;
+            color: $white;
         }
 
         &__icons {
@@ -181,6 +183,193 @@ body {
         }
     }
 }
+
+
+// ---------- MESSAGES ---------- //
+table {
+    border-collapse: collapse;
+    margin: 1rem;
+    border-radius: .4rem;
+    overflow: hidden;
+    background-color: $white;
+    box-shadow: 0 0 10px $black;
+    width: 90%;
+}
+tr {
+    display: flex;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.276);
+
+    &:last-child {
+        border-bottom: none;
+    }
+}
+th {
+    padding: 1rem;
+    text-align: center;
+    flex: 3;
+
+    &.small {
+        flex: 1;
+        text-align: center;
+    }
+}
+td {
+    padding: 1rem;
+    text-align: left;
+    border-right: 1px solid rgba(128, 128, 128, 0.276);
+    flex: 3;
+
+    &:last-child {
+        border-right: none;
+    }
+
+    &.small {
+        flex: 1;
+        text-align: center;
+    }
+}
+.icon {
+    width: 20px;
+    transition: .3s;
+
+    &:hover {
+        transform: scale(1.2);
+    }
+}
+.seen-true {
+    background-color: $white;
+}
+.seen-false {
+    background-color: $colorThree;
+}
+
+
+
+// ---------- MESSAGE ---------- //
+.main.message {
+    justify-content: center;
+}
+
+.message-box {
+    display: flex;
+    flex-direction: column;
+    background-color: $white;
+    box-shadow: 0 0 10px $black;
+    margin: 2rem;
+    padding: 1rem;
+    border-radius: .4rem;
+
+    &__infos {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: .4rem;
+        border-bottom: 1px solid rgba(128, 128, 128, 0.276);
+
+        & p {
+            margin: 0 1rem;
+        }
+    }
+    &__contact {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        font-style: italic;
+        padding: .4rem 1rem;
+
+        & p {
+            display: flex;
+            align-items: center;
+            & img {
+                margin-right: .4rem;
+            }
+        }
+    }
+    &__content {
+        padding-bottom: 2rem;
+    }
+    & .links-box {
+        display: flex;
+        justify-content: space-evenly;
+        background-color: rgba(128, 128, 128, 0.125);
+        padding: .8rem;
+        border-radius: .4rem;
+
+        & a img {
+            transition: .3s;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+        
+    }
+}
+.message-link {
+    margin: 0 .3rem;
+    text-decoration: none;
+}
+
+
+
+// ---------- CREATE PROJECT ---------- //
+.main.create-project {
+    justify-content: center;
+
+    & h2 {
+        margin-bottom: 2rem;
+    }
+
+    & form {
+        display: flex;
+        flex-direction: column;
+
+        & input, & textarea {
+            margin-bottom: 1rem;
+            padding: .4rem;
+            width: 300px;
+
+            &[type = submit] {
+                cursor: pointer;
+                margin-bottom: 2rem;
+            }
+        }
+
+        & textarea {
+            height: 200px;
+        }
+    }
+}
+
+
+
+// ---------- CREATE ARTICLE ---------- //
+.main.create-article {
+    justify-content: center;
+    padding: 2rem;
+
+    & h2 {
+        margin-bottom: 2rem;
+    }
+
+    & .create-article-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__input {
+            margin-bottom: 1rem;
+            padding: .4rem;
+            width: 400px;
+        }
+
+        &__submit {
+            margin-top: 1rem;
+            padding: .4rem;
+            cursor: pointer;
+        }
+    }
+}
+
 
 
 

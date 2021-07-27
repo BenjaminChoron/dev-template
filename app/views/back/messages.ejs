@@ -1,0 +1,46 @@
+<%- include('partials/header') %> 
+
+<main class="main">
+
+    <table>
+        <thead>
+            <tr class="table-head">
+                <th>Nom</th>
+                <th>Email</th>
+                <th class="small">Reçu</th>
+                <th class="small">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if (locals.messages) { %>
+                <% for(const message of messages) { %>
+                    <tr class="seen-<%= message.seen %>">
+                        <td><%= message.first_name %> <%= message.last_name %></td>
+                        <td><%= message.from %></td>
+                        <td class="small"><%= dayjs(message.createdAt).format('Do MMMM YYYY [à] HH:mm') %></td>
+                        <td class="small">
+                            <a class="message-link" href="/admin/messages/<%= message.id %>">
+                                <img class="icon" src="/img/icons/see.svg" alt="">
+                            </a>
+                            <% if (message.seen === false) { %>
+                                <a class="message-link" href="/admin/messages/<%= message.id %>/seen">
+                                    <img class="icon" src="/img/icons/closed-env.svg" alt="">
+                                </a>
+                            <% } else { %>
+                                <a class="message-link" href="/admin/messages/<%= message.id %>/notseen">
+                                    <img class="icon" src="/img/icons/open-env.svg" alt="">
+                                </a>
+                            <% } %>
+                            <a class="message-link" href="/admin/messages/<%= message.id %>/delete">
+                                <img class="icon" src="/img/icons/delete.svg" alt="">
+                            </a>
+                        </td>
+                    </tr>
+                <% } %>
+            <% } %>
+        </tbody>
+    </table>
+
+</main>
+
+<%- include('partials/footer') %> 

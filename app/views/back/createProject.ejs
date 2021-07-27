@@ -1,0 +1,26 @@
+<%- include('partials/header') %> 
+
+<main class="main create-project">
+    <h2>Nouveau projet</h2>
+
+    <form action="/admin/project/create" method="POST">
+        <label for="title">Titre</label>
+        <input type="text" name="title" id="title">
+
+        <label for="image">Image</label>
+        <input type="text" name="image" id="image">
+
+        <label for="content">Description</label>
+        <textarea name="content" id="content"></textarea>
+
+        <label for="web">Lien Web</label>
+        <input type="text" name="web" id="web">
+
+        <label for="github">Lien Github</label>
+        <input type="text" name="github" id="github">
+
+        <input type="submit" value="Créer">
+    </form>
+</main>
+
+<%- include('partials/footer') %> 

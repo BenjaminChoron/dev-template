@@ -1,0 +1,23 @@
+<%- include('partials/header') %> 
+
+<main class="main create-article">
+    <h2>Modifier l'article</h2>
+
+    <form action="" method="post" class="create-article-form">
+
+        <label class="create-article-form__label" for="title">Titre</label>
+        <input class="create-article-form__input" type="text" name="title" id="title" value="<%= article.title %>">
+
+        <label class="create-article-form__label" for="subtitle">Sous-titre</label>
+        <input class="create-article-form__input" type="text" name="subtitle" id="subtitle" value="<%= article.subtitle %>">
+
+        <label class="create-article-form__label" for="image">Image</label>
+        <input class="create-article-form__input" type="text" name="image" id="image" value="<%= article.image %>">
+
+        <textarea class="create-article-form__textarea" name="content" id="editor"><%= article.content %></textarea> 
+
+        <input class="create-article-form__submit" type="submit" value="Modifier">
+    </form>
+</main>
+
+<%- include('partials/footer') %> 
