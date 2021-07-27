@@ -36,7 +36,7 @@ Vous pouvez personnaliser les couleurs et polices dans les fichiers ``` style.sc
 
 Vous devez créer une base de données ``` Postgres ``` et changer le fichier ``` .env.example ``` en ``` .env ``` en renseignant l'URL de la base crée par vos soins
 
-Pour lancer le serveur il suffit de lancer ``` npm run dev ``` dans un terminal (autre que celui déjà lancé pour le scss si vous voulez que tout fonctionne en même temps). ``` nodemon ``` est installé en dev dependencie donc pas besoin de s'en soucié si vous ne l'avez pas sur votre machine 😉
+Pour lancer le serveur il suffit de lancer ``` npm run dev ``` dans un terminal (autre que celui déjà lancé pour le scss si vous voulez que tout fonctionne en même temps). ``` nodemon ``` est installé en dev dependencie donc pas besoin de s'en soucier si vous ne l'avez pas sur votre machine 😉
 
 #### Step 3
 
