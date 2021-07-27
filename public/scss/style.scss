@@ -25,7 +25,7 @@ $white: #f1f1f1;
     background-color: $bg;
     border: none;
     border-radius: .4rem;
-    box-shadow: 0 0 30px $black;
+    box-shadow: 0 0 50px $black;
     color: $text;
     cursor: pointer;
     transition: .3s;
@@ -190,7 +190,7 @@ body {
     align-items: flex-start;
     flex-wrap: wrap;
 
-    & .card {
+    & .project {
         position: relative;
         max-width: 300px;
         background-color: $white;
@@ -202,7 +202,7 @@ body {
         box-shadow: 0 5px 202px rgba(0, 0, 0, 0.5);
 
 
-        & .imgBx {
+        &__img-box {
             position: relative;
             top: -60px;
             left: 50%;
@@ -216,31 +216,53 @@ body {
             background-position: center;
         }
 
-        & .content {
+        &__content {
             position: relative;
             padding: 0 1rem;
             text-align: center;
 
-            & .project-versions {
+            &__title {
+                position: relative;
+                top: -40px;
+            }
+
+            &__project-versions {
                 position: relative;
                 top: -20px;
                 border: 1px solid $black;
                 border-radius: .4rem;
-                & h4 {
+                padding: 1rem;
 
+                &__title {
+                    position: absolute;
+                    top: -26px;
+                    left: -20px;
+                    background-color: $white;
                 }
-                & a {
+                &__link {
+                    display: inline-block;
+                    color: $colorTwo;
+                    margin: 0 .4rem;
+                    transition: .3s;
 
+                    &:hover {
+                        color: $colorThree;
+                        transform: scale(1.1);
+                    }
                 }
             }
 
-            & .btn-box {
+            &__btn-box {
                 display: flex;
                 justify-content: center;
                 align-items: center;
 
-                & img {
-                    width: 30px;
+                &__button {
+                    @include button($colorTwo, $white);
+
+                    &__link__img {
+                        width: 30px;
+                    }
                 }
             }
         }
@@ -335,14 +357,14 @@ body {
 }
 
 
-// ----------------  ARTICLE  ----------------
+// ----------------  ARTICLE / PROJECT  ----------------
 
-.main.article {
+.main.article, .main.project {
     flex-direction: column;
     justify-content: flex-start;
 }
 
-.article {
+.article, .project {
     &__title {
         margin-bottom: .5rem;
     }
@@ -354,6 +376,7 @@ body {
         min-width: 300px;
     }
     &__content {
+        width: 100%;
         padding: 2rem;
 
         & h2 {
@@ -371,6 +394,29 @@ body {
             border-left: 5px solid rgb(162, 162, 162);
             font-style: italic;
             font-weight: 100;
+        }
+
+        & ol, & ul {
+            margin-left: 1.2rem;
+        }
+
+        & code {
+            padding: .4rem;
+            border-radius: .4rem;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        & .image {
+            width: 100%;
+
+            &.image-style-side {
+                float: right;
+                margin: .6rem 0 .6rem 1rem;
+            }
+
+            & img {
+                width: 100%;
+            }
         }
     }
     &__created{

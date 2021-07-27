@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
+    "scss": "node-sass --watch ./public/scss -o ./public/css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,6 +26,7 @@
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
+    "node-sass": "^6.0.1",
     "pg": "^8.6.0",
     "sequelize": "^6.6.5",
     "validator": "^13.6.0"

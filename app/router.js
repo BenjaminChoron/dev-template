@@ -14,6 +14,8 @@ const router = express.Router();
 // routes principales 
 router.get('/', mainController.getHomePage);
 router.get('/projects', mainController.getProjectsPage);
+router.get('/projects/generic/:id', mainController.getOneBasicProject);
+router.get('/projects/tech/:id', mainController.getOneTechProject);
 router.get('/blog', mainController.getBlogPage);
 router.get('/blog/:id', mainController.getOneArticle);
 router.get('/contact', mainController.getContactPage);

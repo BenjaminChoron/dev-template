@@ -30,8 +30,8 @@ CREATE TABLE "project" (
     "updated_at" TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     "image" TEXT NOT NULL,
     "title" TEXT NOT NULL,
-    "basic_content" TEXT NOT NULL,
-    "tech_content" TEXT NOT NULL,
+    "basic_content" TEXT,
+    "tech_content" TEXT,
     "see_link" TEXT,
     "github_link" TEXT
 );

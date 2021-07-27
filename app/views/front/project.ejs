@@ -1,0 +1,13 @@
+<%- include('partials/header') %>
+
+<main class="main project">
+
+    <h1 class="project__title"><%= project.title %></h1>
+
+    <img class="project__image" src="<%= project.image %>" alt="">
+        
+    <div class="project__content"><%- content %></div>
+
+</main>
+
+<%- include('partials/footer') %>

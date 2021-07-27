@@ -30,7 +30,7 @@ Et maintenant... on s'approprie le projet !
 
 #### Step 1
 
-Vous pouvez personnaliser les couleurs et polices dans les fichiers ``` style.scss ``` (pour le front) et ``` back.scss ``` (pour le back office), ces changement seront appliqués sur toutes les pages du site
+Vous pouvez personnaliser les couleurs et polices dans les fichiers ``` style.scss ``` (pour le front) et ``` back.scss ``` (pour le back office), ces changement seront appliqués sur toutes les pages du site. Vous devez simplement lancer ``` npm run scss ``` dans le terminal avant de commencer la modification des fichiers ``` .scss ``` pour permettre la compilation automatique en ``` .css ```
 
 #### Step 2
 
@@ -43,6 +43,12 @@ Vous devez créer un ``` User ``` pour vous connecter au back office. Il faut al
 #### Step 4
 
 Vous avez maintenant accès au back office avec vos identifiants. Vous pouvez voir les messages envoyés depuis le formulaire de contact, créer, modifier et supprimer des projets et des articles de blog
+
+#### Step 5
+
+Concernant la rédaction des projets :
+
+Les champs ``` Contenu générique ```, ``` Contenu technique ```, ``` Lien Web ``` et ``` Lien Github ``` ne sont pas obligatoires. Seuls les champs remplis seront affichés sur la partie front du site
 
 ![Done](https://media.giphy.com/media/RkDX47fpp2nHlaZdjY/giphy.gif)
 

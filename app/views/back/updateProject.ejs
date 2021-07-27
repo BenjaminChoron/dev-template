@@ -1,28 +1,28 @@
 <%- include('partials/header') %> 
 
 <main class="main create-project">
-    <h2>Modifier le project</h2>
+    <h2 class="create-project__title">Modifier le projet</h2>
 
-    <form action="/admin/project/<%= project.id %>/update" method="POST">
-        <label for="title">Titre</label>
-        <input type="text" name="title" id="title" value="<%= project.title %>">
+    <form class="create-project__form" action="/admin/project/<%= project.id %>/update" method="POST">
+        <label class="create-project__form__label" for="title">Titre</label>
+        <input class="create-project__form__input" type="text" name="title" id="title" value="<%= project.title %>">
 
-        <label for="image">Image</label>
-        <input type="text" name="image" id="image" value="<%= project.image %>">
+        <label class="create-project__form__label" for="image">Image</label>
+        <input class="create-project__form__input" type="text" name="image" id="image" value="<%= project.image %>">
 
-        <label for="basic-content">Contenu générique</label>
-        <textarea class="create-article-form__textarea" name="basic_content" id="editor"><%= project.basic_content %></textarea>
+        <label class="create-project__form__label" for="basic-content">Contenu générique</label>
+        <textarea class="create-project__form__textarea" name="basic_content" id="editor"><%= project.basic_content %></textarea>
 
-        <label for="tech-content">Contenu technique</label>
-        <textarea class="create-article-form__textarea" name="tech_content" id="editor-tech"><%= project.tech_content %></textarea>
+        <label class="create-project__form__label" for="tech-content">Contenu technique</label>
+        <textarea class="create-project__form__textarea" name="tech_content" id="editor-tech"><%= project.tech_content %></textarea>
 
-        <label for="web">Lien Web</label>
-        <input type="text" name="web" id="web" value="<%= project.see_link %>">
+        <label class="create-project__form__label" for="web">Lien Web</label>
+        <input class="create-project__form__input" type="text" name="web" id="web" value="<%= project.see_link %>">
 
-        <label for="github">Lien Github</label>
-        <input type="text" name="github" id="github" value="<%= project.github_link %>">
+        <label class="create-project__form__label" for="github">Lien Github</label>
+        <input class="create-project__form__input" type="text" name="github" id="github" value="<%= project.github_link %>">
 
-        <input type="submit" value="Modifier">
+        <input class="create-project__form__input" type="submit" value="Modifier">
     </form>
 </main>
 

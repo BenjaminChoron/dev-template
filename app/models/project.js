@@ -13,12 +13,10 @@ Project.init({
         allowNull: false
     },
     basic_content: {
-        type: DataTypes.TEXT,
-        allowNull: false
+        type: DataTypes.TEXT
     },
     tech_content: {
-        type: DataTypes.TEXT,
-        allowNull: false
+        type: DataTypes.TEXT
     },
     see_link: {
         type: DataTypes.TEXT
