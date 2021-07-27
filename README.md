@@ -18,7 +18,7 @@ Ouvrir dans VScode (ou autre éditeur)
 
 #### Step 3
 
-``` npm init ``` dans le terminal
+``` npm install ``` dans le terminal
 
 Et maintenant... on s'approprie le projet !
 
