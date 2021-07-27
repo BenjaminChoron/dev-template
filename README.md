@@ -30,11 +30,13 @@ Et maintenant... on s'approprie le projet !
 
 #### Step 1
 
-Vous pouvez personnaliser les couleurs et polices dans les fichiers ``` style.scss ``` (pour le front) et ``` back.scss ``` (pour le back office), ces changement seront appliqués sur toutes les pages du site. Vous devez simplement lancer ``` npm run scss ``` dans le terminal avant de commencer la modification des fichiers ``` .scss ``` pour permettre la compilation automatique en ``` .css ```
+Vous pouvez personnaliser les couleurs et polices dans les fichiers ``` style.scss ``` (pour le front) et ``` back.scss ``` (pour le back office), ces changement seront appliqués sur toutes les pages du site. Vous devez simplement lancer ``` npm run scss ``` dans un terminal avant de commencer la modification des fichiers ``` .scss ``` pour permettre la compilation automatique en ``` .css ```
 
 #### Step 2
 
 Vous devez créer une base de données ``` Postgres ``` et changer le fichier ``` .env.example ``` en ``` .env ``` en renseignant l'URL de la base crée par vos soins
+
+Pour lancer le serveur il suffit de lancer ``` npm run dev ``` dans un terminal (autre que celui déjà lancé pour le scss si vous voulez que tout fonctionne en même temps). ``` nodemon ``` est installé en dev dependencie donc pas besoin de s'en soucié si vous ne l'avez pas sur votre machine 😉
 
 #### Step 3
 
@@ -48,7 +50,13 @@ Vous avez maintenant accès au back office avec vos identifiants. Vous pouvez vo
 
 Concernant la rédaction des projets :
 
-Les champs ``` Contenu générique ```, ``` Contenu technique ```, ``` Lien Web ``` et ``` Lien Github ``` ne sont pas obligatoires. Seuls les champs remplis seront affichés sur la partie front du site
+Les champs ``` Contenu générique ```, ``` Contenu technique ```, ``` Lien Web ``` et ``` Lien Github ``` ne sont pas obligatoires. Seuls les champs remplis seront affichés sur la partie front du site. 
+
+Dans les champs ``` Contenu générique ``` et ``` Contenu technique ``` les images ne sont utlisables qu'avec une URL (en cliquant sur la petit flèche à côté du pictogramme)
+
+Avant de publier un project en ligne, je vous conseille de tester en local afin de voir le rendu réel sur le site. Les paramètres d'affichage front sont modifiables dans le fichier ``` style.scss ``` à partir de la ligne 382
+
+Bon, cette fois on doit pas être trop mal !
 
 ![Done](https://media.giphy.com/media/RkDX47fpp2nHlaZdjY/giphy.gif)
 

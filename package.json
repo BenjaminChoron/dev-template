@@ -30,5 +30,8 @@
     "pg": "^8.6.0",
     "sequelize": "^6.6.5",
     "validator": "^13.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
   }
 }
