@@ -57,11 +57,11 @@ body {
 }
 
 
-// ---------- LOGIN ---------- //
-.main.login {
+// ---------- LOGIN / SIGNUP ---------- //
+.main.login, .main.signup {
     justify-content: center;
 }
-.login {
+.login, .signup {
     &__title {
         margin-bottom: 2rem;
     }
@@ -188,6 +188,10 @@ body {
             &__link {
                 text-decoration: none;
                 margin: 0 .3rem;
+
+                &__icon {
+                    width: 20px;
+                }
             }
         }
     }

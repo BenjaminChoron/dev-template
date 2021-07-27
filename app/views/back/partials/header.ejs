@@ -11,10 +11,10 @@
 
     <body>
         <header class="header">
-            <a href="/admin">
-                <div class="header__logo"></div>
-            </a>
             <% if (locals.user) { %>
+                <a href="/admin">
+                    <div class="header__logo"></div>
+                </a>
                 <nav class="header__nav">
                     <ul class="header__nav__ul">
                         <li class="header__nav__ul__li">

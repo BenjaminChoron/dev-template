@@ -5,13 +5,13 @@
         <h2 class="projects-box__title">Mes projets</h2>
         <% for(const project of projects) { %>
             <div class="projects-box__item">
-                <p><%= project.title %></p>
+                <p class="projects-box__item__title"><%= project.title %></p>
                 <div class="projects-box__item__icons">
                     <a class="projects-box__item__icons__link" href="/admin/project/<%= project.id %>/update">
-                        <img class="icon" src="/img/icons/update.svg" alt="">
+                        <img class="projects-box__item__icons__link__icon" src="/img/icons/update.svg" alt="">
                     </a>
                     <a class="message-link" href="/admin/project/<%= project.id %>/delete">
-                        <img class="icon" src="/img/icons/delete.svg" alt="">
+                        <img class="projects-box__item__icons__link__icon" src="/img/icons/delete.svg" alt="">
                     </a>
                 </div>
             </div>

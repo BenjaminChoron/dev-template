@@ -20,30 +20,30 @@ body {
   align-items: center;
 }
 
-.main.login {
+.main.login, .main.signup {
   justify-content: center;
 }
 
-.login__title {
+.login__title, .signup__title {
   margin-bottom: 2rem;
 }
-.login__form {
+.login__form, .signup__form {
   display: flex;
   flex-direction: column;
 }
-.login__form__label {
+.login__form__label, .signup__form__label {
   margin-bottom: 0.4rem;
 }
-.login__form__input {
+.login__form__input, .signup__form__input {
   margin-bottom: 1rem;
   padding: 0.4rem;
   width: 300px;
 }
-.login__form__input[type=submit] {
+.login__form__input[type=submit], .signup__form__input[type=submit] {
   cursor: pointer;
   margin-bottom: 2rem;
 }
-.login__link {
+.login__link, .signup__link {
   text-decoration: none;
 }
 
@@ -134,6 +134,9 @@ body {
 .projects-box__item__icons__link, .articles-box__item__icons__link {
   text-decoration: none;
   margin: 0 0.3rem;
+}
+.projects-box__item__icons__link__icon, .articles-box__item__icons__link__icon {
+  width: 20px;
 }
 
 .messages__table {
