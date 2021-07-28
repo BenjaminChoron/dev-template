@@ -6,7 +6,7 @@ Je l'ai voulu personnalisable et open source. N'hésitez pas à y apporter des m
 
 🚨 Je ne demande aucune identification ou attribution si vous utilisez ce projet. Il est entièrement libre. 🚨
 
-## Un petit apperçu ?
+## Un petit aperçu ?
 
 La partie visible par les visiteurs
 
