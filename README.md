@@ -6,6 +6,16 @@ Je l'ai voulu personnalisable et open source. N'hésitez pas à y apporter des m
 
 🚨 Je ne demande aucune identification ou attribution si vous utilisez ce projet. Il est entièrement libre. 🚨
 
+## Un petit apperçu ?
+
+La partie visible par les visiteurs
+
+![Visiteurs](./public/img/preview/front.png)
+
+La partie admin
+
+![Admin](./public/img/preview/back.png)
+
 ## Installation et utilisation
 
 ### 1. Récupérer le projet en local et l'initialiser
