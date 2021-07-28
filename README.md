@@ -44,7 +44,7 @@ Vous devez créer un ``` User ``` pour vous connecter au back office. Il faut al
 
 #### Step 4
 
-Vous avez maintenant accès au back office avec vos identifiants. Vous pouvez voir les messages envoyés depuis le formulaire de contact, créer, modifier et supprimer des projets et des articles de blog
+Vous avez maintenant accès au back office avec vos identifiants sur la route ``` /login ```. Vous pouvez voir les messages envoyés depuis le formulaire de contact, créer, modifier et supprimer des projets et des articles de blog
 
 #### Step 5
 
