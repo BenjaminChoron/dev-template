@@ -5,6 +5,7 @@ const adminMiddleware = require('./middlewares/adminMiddleware');
 // controllers
 const mainController = require('./controllers/mainController');
 const adminController = require('./controllers/adminController');
+const profilController = require('./controllers/profilController');
 const contactController = require('./controllers/contactController');
 const articleController = require('./controllers/articleController');
 const projectController = require('./controllers/projectController');
@@ -29,6 +30,13 @@ router.get('/login', adminController.loginPage);
 router.post('/login', adminController.loginAction);
 
 router.get('/admin', adminMiddleware, adminController.adminPage);
+
+// PROFIL
+router.get('/admin/profil', adminMiddleware, profilController.profilPage);
+router.post('/admin/profil/update-infos/:id', adminMiddleware, profilController.profilInfosUpdate);
+router.post('/admin/profil/update-pseudo/:id', adminMiddleware, profilController.profilPseudoUpdate);
+router.post('/admin/profil/update-password/:id', adminMiddleware, profilController.profilPasswordUpdate);
+router.post('/admin/profil/delete/:id', adminMiddleware, profilController.profilDelete);
 
 // MESSAGES
 router.get('/admin/messages', adminMiddleware, contactController.seeAllMessages);

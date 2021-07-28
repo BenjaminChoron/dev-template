@@ -203,6 +203,53 @@ body {
 }
 
 
+// ---------- PROFIL ---------- //
+.main.profil {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    padding: 0 2rem;
+}
+.profil {
+    &__update, &__delete {
+        &__title {
+            margin-bottom: 2rem;
+        }
+    
+        &__error {
+            color: crimson;
+            margin-bottom: 1rem;
+        }
+    
+        &__form {
+            display: flex;
+            flex-direction: column;
+    
+            &__label {
+                margin-bottom: .4rem;
+            }
+    
+            &__input {
+                margin-bottom: 1rem;
+                padding: .4rem;
+                width: 300px;
+    
+                &[type = submit] {
+                    cursor: pointer;
+                    margin-bottom: 2rem;
+
+                    &.warning {
+                        background-color: crimson;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
 // ---------- MESSAGES ---------- //
 .messages {
     &__table {

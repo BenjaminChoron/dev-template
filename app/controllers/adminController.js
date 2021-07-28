@@ -82,6 +82,15 @@ const adminController = {
         } catch(error) {
             console.log(error);
         }
+    },
+
+    profilPage: async (req, res) => {
+        const notSeen = await Message.findAll({
+            where: {
+                seen: false
+            }
+        });
+        res.render('back/profil', { notSeen, user: req.session.user });
     }
 };
 

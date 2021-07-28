@@ -117,6 +117,35 @@ body {
         .projects-box__item__icons__link__icon, .articles-box__item__icons__link__icon {
           width: 20px; }
 
+.main.profil {
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  padding: 0 2rem; }
+
+.profil__update__title, .profil__delete__title {
+  margin-bottom: 2rem; }
+
+.profil__update__error, .profil__delete__error {
+  color: crimson;
+  margin-bottom: 1rem; }
+
+.profil__update__form, .profil__delete__form {
+  display: flex;
+  flex-direction: column; }
+  .profil__update__form__label, .profil__delete__form__label {
+    margin-bottom: .4rem; }
+  .profil__update__form__input, .profil__delete__form__input {
+    margin-bottom: 1rem;
+    padding: .4rem;
+    width: 300px; }
+    .profil__update__form__input[type=submit], .profil__delete__form__input[type=submit] {
+      cursor: pointer;
+      margin-bottom: 2rem; }
+      .profil__update__form__input[type=submit].warning, .profil__delete__form__input[type=submit].warning {
+        background-color: crimson;
+        color: white; }
+
 .messages__table {
   border-collapse: collapse;
   margin: 1rem;

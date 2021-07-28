@@ -12,11 +12,16 @@
     <body>
         <header class="header">
             <% if (locals.user) { %>
-                <a href="/admin">
+                <a href="/admin/profil">
                     <div class="header__logo"></div>
                 </a>
                 <nav class="header__nav">
                     <ul class="header__nav__ul">
+                        <li class="header__nav__ul__li">
+                            <a href="/admin">
+                                <img class="header__nav__ul__li__img" src="/img/icons/house.svg" alt="">
+                            </a>
+                        </li>
                         <li class="header__nav__ul__li">
                             <a href="/" target="_blank">
                                 <img class="header__nav__ul__li__img" src="/img/icons/earth.svg" alt="">
@@ -24,11 +29,13 @@
                         </li>
                         <li class="header__nav__ul__li">
                             <a href="/admin/messages">
-                                <% if (notSeen.length > 0) { %>
-                                    <div class="receivedMessages">
-                                        <span class="receivedMessages__badge"><%= notSeen.length %></span>
-                                        <img class="receivedMessages__img" src="/img/icons/mailbox.svg" alt="">
-                                    </div>
+                                <% if (locals.notSeen) { %>
+                                    <% if (notSeen.length > 0) { %>
+                                        <div class="receivedMessages">
+                                            <span class="receivedMessages__badge"><%= notSeen.length %></span>
+                                            <img class="receivedMessages__img" src="/img/icons/mailbox.svg" alt="">
+                                        </div>
+                                    <% } %>
                                 <% } else { %>
                                     <div class="receivedMessages">
                                         <img class="receivedMessages__img" src="/img/icons/postbox.svg" alt="">

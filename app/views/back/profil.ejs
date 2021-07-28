@@ -1,0 +1,60 @@
+<%- include('partials/header') %> 
+
+<main class="main profil">
+
+    <div class="profil__update">
+        <h2 class="profil__update__title">Modifier mon profil</h2>
+
+        <form class="profil__update__form" action="/admin/profil/update-infos/<%= user.id %>" method="post">
+            <label class="profil__update__form__label" for="firstname">Prénom</label>
+            <input class="profil__update__form__input" type="text" name="first_name" id="first_name" value="<%= user.first_name %>">
+            <label class="profil__update__form__label" for="lastname">Nom</label>
+            <input class="profil__update__form__input" type="text" name="last_name" id="last_name" value="<%= user.last_name %>">
+
+            <input class="profil__update__form__input" type="submit" value="Modifier">
+        </form>
+
+        <form class="profil__update__form" action="/admin/profil/update-pseudo/<%= user.id %>" method="post">
+            <% if (locals.pseudoError) { %>
+                <p class="profil__update__error"><%= pseudoError %></p>
+            <% } %>
+
+            <label class="profil__update__form__label" for="pseudo">Pseudo</label>
+            <input class="profil__update__form__input" type="text" name="pseudo" id="pseudo" value="<%= user.pseudo %>">
+
+            <input class="profil__update__form__input" type="submit" value="Modifier">
+        </form>
+            
+        <form class="profil__update__form" action="/admin/profil/update-password/<%= user.id %>" method="post">
+            <% if (locals.passwordError) { %>
+                <p class="profil__update__error"><%= passwordError %></p>
+            <% } %>
+
+            <label class="profil__update__form__label" for="password">Mot de passe</label>
+            <input class="profil__update__form__input" type="password" name="password" id="password">
+    
+            <label class="profil__update__form__label" for="passwordConfirm">Confirmer le mot de passe</label>
+            <input class="profil__update__form__input" type="password" name="passwordConfirm" id="passwordConfirm">
+    
+            <input class="profil__update__form__input" type="submit" value="Modifier">
+        </form>
+    </div>
+
+    <div class="profil__delete">
+        <h2 class="profil__delete__title">Supprimer mon profil</h2>
+
+        <% if (locals.deleteError) { %>
+            <p class="profil__delete__error"><%= deleteError %></p>
+        <% } %>
+
+        <form class="profil__delete__form" action="/admin/profil/delete/<%= user.id %>" method="post">
+            <label class="profil__delete__form__label" for="password">Mot de passe</label>
+            <input class="profil__delete__form__input" type="password" name="password" id="password">
+
+            <input class="profil__delete__form__input warning" type="submit" value="Supprimer">
+        </form>
+    </div>
+
+</main>
+
+<%- include('partials/footer') %> 
