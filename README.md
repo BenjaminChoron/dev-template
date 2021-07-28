@@ -6,9 +6,13 @@ Je l'ai voulu personnalisable et open source. N'hésitez pas à y apporter des m
 
 🚨 Je ne demande aucune identification ou attribution si vous utilisez ce projet. Il est entièrement libre. 🚨
 
+<<<<<<< HEAD
 -----------------
 
 ## Un petit apperçu ?
+=======
+## Un petit aperçu ?
+>>>>>>> 02eb5a4ab29a933df6a33c548c4861074983f41c
 
 La partie visible par les visiteurs
 
