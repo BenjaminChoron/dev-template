@@ -14,15 +14,15 @@
 
                         <% if (project.basic_content !== null && project.basic_content !== '' || project.tech_content !== null && project.tech_content !== '') { %>
                             <div class="project__content__project-versions">
-                                <h4 class="project__content__project-versions__title">Commentaires</h4>
+                                <h4 class="project__content__project-versions__title">Description</h4>
 
                             
                                 <% if (project.basic_content !== null && project.basic_content !== '') { %>
-                                    <a class="project__content__project-versions__link" href="/projects/generic/<%= project.id %>">Génériques</a>
+                                    <a class="project__content__project-versions__link" href="/projects/generic/<%= project.id %>">Générique</a>
                                 <% } %> 
     
                                 <% if (project.tech_content !== null && project.tech_content !== '') { %>
-                                    <a class="project__content__project-versions__link" href="/projects/tech/<%= project.id %>">Techniques</a>
+                                    <a class="project__content__project-versions__link" href="/projects/tech/<%= project.id %>">Technique</a>
                                 <% } %>
                             </div>
                         <% } %>

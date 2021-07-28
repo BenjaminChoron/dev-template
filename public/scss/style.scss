@@ -25,7 +25,7 @@ $white: #f1f1f1;
     background-color: $bg;
     border: none;
     border-radius: .4rem;
-    box-shadow: 0 0 50px $black;
+    box-shadow: 0 0 6px darken($bg, 10);
     color: $text;
     cursor: pointer;
     transition: .3s;
@@ -519,6 +519,25 @@ body {
                 left: 50%;
                 transform: translateX(-50%);
             }
+        }
+    }
+}
+
+
+
+// ----------------  FOOTER  ----------------
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: .6rem 1rem;
+
+    &__copyright, &__legals {
+        text-decoration: none;
+        color: $colorOne;
+        transition: .3s;
+
+        &:hover {
+            color: $colorThree;
         }
     }
 }

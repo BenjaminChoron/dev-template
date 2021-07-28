@@ -20,6 +20,7 @@ router.get('/blog', mainController.getBlogPage);
 router.get('/blog/:id', mainController.getOneArticle);
 router.get('/contact', mainController.getContactPage);
 router.post('/contact', contactController.actionContactForm);
+router.get('/legals', mainController.getLegalsPage);
 
 // ADMIN
 router.get('/signup', adminController.signupPage);

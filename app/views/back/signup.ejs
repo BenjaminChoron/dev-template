@@ -2,17 +2,33 @@
 
 <main class="main signup">
 
-    <h2 class="signup__title">Signup</h2>
+    <h2 class="signup__title">S'enregistrer</h2>
+
+    <% if (locals.error) { %>
+        <p class="login__error"><%= error %> </p>
+    <% } %>
 
     <form class="signup__form" action="/signup" method="post">
         <label class="signup__form__label" for="firstname">Prénom</label>
-        <input class="signup__form__input" type="text" name="first_name" id="first_name">
+        <% if (locals.body) { %>
+            <input class="signup__form__input" type="text" name="first_name" id="first_name" value="<%= body.first_name %>">
+        <% } else { %>
+            <input class="signup__form__input" type="text" name="first_name" id="first_name">
+        <% } %> 
 
         <label class="signup__form__label" for="lastname">Nom</label>
-        <input class="signup__form__input" type="text" name="last_name" id="last_name">
+        <% if (locals.body) { %>
+            <input class="signup__form__input" type="text" name="last_name" id="last_name" value="<%= body.last_name %>">
+        <% } else { %>
+            <input class="signup__form__input" type="text" name="last_name" id="last_name">
+        <% } %> 
 
         <label class="signup__form__label" for="pseudo">Pseudo</label>
-        <input class="signup__form__input" type="text" name="pseudo" id="pseudo">
+        <% if (locals.body) { %>
+            <input class="signup__form__input" type="text" name="pseudo" id="pseudo" value="<%= body.pseudo %>">
+        <% } else { %>
+            <input class="signup__form__input" type="text" name="pseudo" id="pseudo">
+        <% } %> 
 
         <label class="signup__form__label" for="password">Mot de passe</label>
         <input class="signup__form__input" type="password" name="password" id="password">

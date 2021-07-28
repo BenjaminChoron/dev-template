@@ -169,7 +169,7 @@ body {
           background-color: #055052;
           border: none;
           border-radius: .4rem;
-          box-shadow: 0 0 50px #333;
+          box-shadow: 0 0 6px #022122;
           color: #f1f1f1;
           cursor: pointer;
           transition: .3s; }
@@ -239,7 +239,7 @@ body {
           background-color: #055052;
           border: none;
           border-radius: .4rem;
-          box-shadow: 0 0 50px #333;
+          box-shadow: 0 0 6px #022122;
           color: #f1f1f1;
           cursor: pointer;
           transition: .3s; }
@@ -363,7 +363,7 @@ body {
         background-color: #003638;
         border: none;
         border-radius: .4rem;
-        box-shadow: 0 0 50px #333;
+        box-shadow: 0 0 6px #000505;
         color: #f1f1f1;
         cursor: pointer;
         transition: .3s;
@@ -375,6 +375,17 @@ body {
           color: #f1f1f1; }
         .contact-form__form__input-box__input[type="submit"]:hover {
           background-color: black; }
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: .6rem 1rem; }
+  .footer__copyright, .footer__legals {
+    text-decoration: none;
+    color: #003638;
+    transition: .3s; }
+    .footer__copyright:hover, .footer__legals:hover {
+      color: #53B8BB; }
 
 .error__img {
   width: 40%;

@@ -23,6 +23,10 @@ body {
 .login__title, .signup__title {
   margin-bottom: 2rem; }
 
+.login__error, .signup__error {
+  color: crimson;
+  margin-bottom: 1rem; }
+
 .login__form, .signup__form {
   display: flex;
   flex-direction: column; }

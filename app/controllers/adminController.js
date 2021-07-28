@@ -7,15 +7,15 @@ const adminController = {
     },
 
     signupAction: async (req, res) => {
-        if(!req.body.password || req.body.password !== req.body.passwordConfirm) return res.redirect('/signup');
         try {
             const user = await User.findOne({
                 where: {
                     pseudo: req.body.pseudo
                 }
             });
-
-            if(user) return res.redirect('/signup');
+            
+            if(user) { throw 'Ce pseudo existe déjà' };
+            if(!req.body.password || req.body.password !== req.body.passwordConfirm) { throw 'Les deux mots de passe ne sont pas identiques' };
 
             const userData = {
                 pseudo: req.body.pseudo,
@@ -24,12 +24,16 @@ const adminController = {
                 last_name: req.body.last_name
             }
 
-            User.create(userData).then(user => {
-                res.redirect('/login');
-            });
-            
+            const newUser = await User.create(userData);
+
+            res.redirect('/login');
         } catch(error) {
-            console.log(error);
+            let body = {
+                first_name: req.body.first_name,
+                last_name: req.body.last_name,
+                pseudo: req.body.pseudo
+            }
+            res.render('back/signup', { error, body })
         }
     },
 
@@ -44,24 +48,22 @@ const adminController = {
                     pseudo: req.body.pseudo
                 }
             });
-            if(user) {
-                const result = await compare(req.body.password, user.password);
-                if(result) {
-                    req.session.user = {
-                        id: user.id,
-                        pseudo: user.pseudo,
-                        first_name: user.first_name,
-                        last_name: user.last_name
-                    }
-                    res.redirect('/admin');
-                } else {
-                    res.redirect('/login');
-                }
-            } else {
-                res.redirect('/login');
+
+            if(!user) { throw 'Identifiant ou mot de passe incorrecte' };
+
+            const result = await compare(req.body.password, user.password);
+
+            if(!result) { throw 'Identifiant ou mot de passe incorrecte' };
+
+            req.session.user = {
+                id: user.id,
+                pseudo: user.pseudo,
+                first_name: user.first_name,
+                last_name: user.last_name
             }
+            res.redirect('/admin');
         } catch(error) {
-            console.log(error);
+            res.render('back/login', { error });
         }
     },
 

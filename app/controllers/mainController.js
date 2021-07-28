@@ -53,6 +53,10 @@ const mainController = {
     getContactPage : (req, res) => {
         res.render('front/contact');
     },
+
+    getLegalsPage : (req, res) => {
+        res.render('front/legals');
+    }
 };
 
 
