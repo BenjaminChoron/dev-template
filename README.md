@@ -6,6 +6,8 @@ Je l'ai voulu personnalisable et open source. N'hésitez pas à y apporter des m
 
 🚨 Je ne demande aucune identification ou attribution si vous utilisez ce projet. Il est entièrement libre. 🚨
 
+-----------------
+
 ## Un petit apperçu ?
 
 La partie visible par les visiteurs
@@ -15,6 +17,8 @@ La partie visible par les visiteurs
 La partie admin
 
 ![Admin](./public/img/preview/back.png)
+
+-----------------
 
 ## Installation et utilisation
 
@@ -69,6 +73,8 @@ Avant de publier un project en ligne, je vous conseille de tester en local afin 
 Bon, cette fois on doit pas être trop mal !
 
 ![Done](https://media.giphy.com/media/RkDX47fpp2nHlaZdjY/giphy.gif)
+
+-----------------
 
 ## Feedback
 
