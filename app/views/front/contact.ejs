@@ -2,74 +2,73 @@
 
 <main class="main contact">
     <div class="contact-form">
-        <h2>Me contacter</h2>
+        <h2 class="contact-form__title">Me contacter</h2>
 
         <% if (locals.message) { %>
-            <p class="submit-message"><%= message %></p>
+            <p class="contact-form__submit-message"><%= message %></p>
         <% } %>
 
         <% if (!locals.done) { %>
-            <form action="/contact" method="POST" class="form-box">
-                <div class="input-box w50">
+            <form class="contact-form__form" action="/contact" method="POST">
+                <div class="contact-form__form__input-box w50">
                     <% if (locals.body) { %>
-                        <input type="text" name="first_name" id="first_name" required value="<%= body.first_name %>">
+                        <input class="contact-form__form__input-box__input" type="text" name="first_name" id="first_name" required value="<%= body.first_name %>">
                     <% } else { %>
-                        <input type="text" name="first_name" id="first_name" required>
+                        <input class="contact-form__form__input-box__input" type="text" name="first_name" id="first_name" required>
                     <% } %>
                         <% if (locals.errors) { %>
-                            <small><%= errors.first_name %></small>
+                            <small class="contact-form__form__input-box__small"><%= errors.first_name %></small>
                         <% } %>
-
-                    <label for="first_name">Prénom</label>
+                    <label class="contact-form__form__input-box__label" for="first_name">Prénom</label>
                 </div>
 
-                <div class="input-box w50">
+                <div class="contact-form__form__input-box w50">
                     <% if (locals.body) { %>
-                        <input type="text" name="last_name" id="last_name" required value="<%= body.last_name %>">
+                        <input class="contact-form__form__input-box__input" type="text" name="last_name" id="last_name" required value="<%= body.last_name %>">
                     <% } else { %>
-                        <input type="text" name="last_name" id="last_name" required>
+                        <input class="contact-form__form__input-box__input" type="text" name="last_name" id="last_name" required>
                     <% } %>
                         <% if (locals.errors) { %>
-                            <small><%= errors.last_name %></small>
+                            <small class="contact-form__form__input-box__small"><%= errors.last_name %></small>
                         <% } %>
-                    <label for="last_name">Nom</label>
+                    <label class="contact-form__form__input-box__label" for="last_name">Nom</label>
                 </div>
 
-                <div class="input-box w50">
+                <div class="contact-form__form__input-box w50">
                     <% if (locals.body) { %>
-                        <input type="email" name="email" id="email" required value="<%= body.email %>">
+                        <input class="contact-form__form__input-box__input" type="email" name="email" id="email" required value="<%= body.email %>">
                     <% } else { %>
-                        <input type="email" name="email" id="email" required>
+                        <input class="contact-form__form__input-box__input" type="email" name="email" id="email" required>
                     <% } %>
                         <% if (locals.errors) { %>
-                            <small><%= errors.email %></small>
+                            <small class="contact-form__form__input-box__small"><%= errors.email %></small>
                         <% } %>
-                    <label for="email">Email</label>
+                    <label class="contact-form__form__input-box__label" for="email">Email</label>
                 </div>
 
-                <div class="input-box w50">
+                <div class="contact-form__form__input-box w50">
                     <% if (locals.body) { %>
-                        <input type="tel" name="phone" id="phone" required value="<%= body.phone %>">
+                        <input class="contact-form__form__input-box__input" type="tel" name="phone" id="phone" required value="<%= body.phone %>">
                     <% } else { %>
-                        <input type="tel" name="phone" id="phone" required>
+                        <input class="contact-form__form__input-box__input" type="tel" name="phone" id="phone" required>
                     <% } %> 
                     <% if (locals.errors) { %>
-                        <small><%= errors.phone %></small>
+                        <small class="contact-form__form__input-box__small"><%= errors.phone %></small>
                     <% } %>
-                    <label for="phone">Téléphone</label>
+                    <label class="contact-form__form__input-box__label" for="phone">Téléphone</label>
                 </div>
 
-                <div class="input-box w100">
+                <div class="contact-form__form__input-box w100">
                     <% if (locals.body) { %>
-                        <textarea name="message" id="message" required><%= body.message %></textarea>
+                        <textarea class="contact-form__form__input-box__textarea" name="message" id="message" required><%= body.message %></textarea>
                     <% } else { %>
-                        <textarea name="message" id="message" required></textarea>
+                        <textarea class="contact-form__form__input-box__textarea" name="message" id="message" required></textarea>
                     <% } %> 
-                        <label for="message">Votre message...</label>
+                        <label class="contact-form__form__input-box__label" for="message">Votre message...</label>
                 </div>
 
-                <div class="input-box w100">
-                    <input type="submit" value="Envoyer">
+                <div class="contact-form__form__input-box w100">
+                    <input class="contact-form__form__input-box__input" type="submit" value="Envoyer">
                 </div>
             </form>
         <% } %>

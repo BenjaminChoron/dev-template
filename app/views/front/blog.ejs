@@ -4,18 +4,18 @@
     
     <h1>Blog</h1>
 
-    <div class="article-container">
+    <div class="articles-container">
         
         <% if (locals.articles) { %>
             <% for(const article of articles) { %>
                 <div class="card">
-                    <div class="imgBx" style="background-image: url('<%= article.image %>');"></div>
-                    <div class="content">
-                        <h3 class="title"><%= article.title %></h3>
-                        <h4 class="subtitle"><%= article.subtitle %></h4>
-                        <div class="btn-box">
-                            <div class="article__button">
-                                <a class="article__button__link" href="/blog/<%= article.id %>">
+                    <div class="card__img-box" style="background-image: url('<%= article.image %>');"></div>
+                    <div class="card__content">
+                        <h3 class="card__content__title"><%= article.title %></h3>
+                        <h4 class="card__content__subtitle"><%= article.subtitle %></h4>
+                        <div class="card__content__btn-box">
+                            <div class="card__content__btn-box__button">
+                                <a class="card__content__btn-box__button__link" href="/blog/<%= article.id %>">
                                     Read
                                 </a>
                             </div>

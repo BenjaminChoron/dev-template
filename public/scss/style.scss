@@ -67,10 +67,6 @@ body {
 }
 
 // ---------- MENU ---------- //
-
-.menu.expend .menu__toggle__hover {
-    color: $white;
-}
 .menu {
     z-index: 9999;
     display: flex;
@@ -80,6 +76,14 @@ body {
     top: 0;
     left: 0;
     padding: 1em;
+
+    &.expend {
+        width: 176px;
+        height: 100vh;
+        background-color: $colorOne;
+        box-shadow: 0 0 10px $black;
+    }
+
     &__toggle {
         display: flex;
         align-items: center;
@@ -88,90 +92,97 @@ body {
         padding: .2em .6em;
         border-radius: 10px;
         cursor: pointer;
+
         &__hover {
             margin: auto 0;
             color: $colorOne;
             font-size: 0;
             transition: .3s;
+
+            &.appear {
+                font-size: 30px;
+                line-height: 30px;
+            }
         }
         &__icon {
             width: 40px;
             height: 34px;
         }
     }
+
     &__container {
         display: none;
-    }
-    &__nav {
-        flex: 1;
-    }
-    &__socials {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        list-style: none;
 
-        &__link {
-            margin: .6em;
-            text-transform: uppercase;
-        
-            & a {
-                display: inline-block;
-                color: $white;
-                text-decoration: none;
-                transition: .3s;
+        &.show-menu {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        &__nav {
+            flex: 1;
+    
+            &__list {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                list-style: none;
             
-                &:hover {
-                    transform: scale(1.2);
+                &__item {
+                    margin: 1em 0;
+                    transition: .3s;
+            
+                    &__link {
+                        color: $white;
+                        text-transform: uppercase;
+                        text-decoration: none;
+                        transition: .3s;
+                    
+                            &:hover {
+                                color: $colorThree;
+                            }
+                    }
+            
+                    &:hover {
+                        transform: scale(1.2);
+                    }
+                }
+            }
+        }
+
+        &__socials {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            list-style: none;
+    
+            &__item {
+                margin: .6em;
+                text-transform: uppercase;
+            
+                &__link {
+                    display: inline-block;
+                    color: $white;
+                    text-decoration: none;
+                    transition: .3s;
+                
+                    &:hover {
+                        transform: scale(1.2);
+                    }
                 }
             }
         }
     }
 }
-.expend {
-    width: 176px;
-    height: 100vh;
-    background-color: $colorOne;
-    box-shadow: 0 0 10px $black;
-}
-.appear {
-    font-size: 30px;
-    line-height: 30px;
-}
-.show-menu {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-.nav__list {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    list-style: none;
 
-    &__item {
-        margin: 1em 0;
-        transition: .3s;
-
-        & a {
-            color: $white;
-            text-transform: uppercase;
-            text-decoration: none;
-            transition: .3s;
-        
-                &:hover {
-                    color: $colorThree;
-                }
-        }
-
-        &:hover {
-            transform: scale(1.2);
-        }
-    }
+.menu.expend .menu__toggle__hover {
+    color: $white;
 }
+
+
 
 
 
@@ -268,16 +279,6 @@ body {
         }
     }
 }
-.content__title {
-    position: relative;
-    top: -30px;
-    margin-bottom: 1rem;
-    text-align: center
-}
-
-.article__button {
-    @include button($colorTwo, $white);
-}
 
 
 
@@ -289,7 +290,7 @@ body {
     justify-content: flex-start;
 }
 
-.article-container {
+.articles-container {
     margin-top: 3rem;
     width: 100%;
     display: flex;
@@ -310,7 +311,7 @@ body {
         box-shadow: 0 5px 202px rgba(0, 0, 0, 0.5);
 
 
-        & .imgBx {
+        &__img-box {
             position: relative;
             top: -60px;
             left: 50%;
@@ -324,31 +325,31 @@ body {
             background-position: center;
         }
 
-        & .content {
+        &__content {
             position: relative;
             padding: 0 1rem;
             text-align: left;
 
-            & .title {
+            &__title {
                 position: relative;
                 top: -30px;
                 margin-bottom: 1rem;
                 text-align: center
             }
 
-            & .subtitle {
+            &__subtitle {
                 position: relative;
                 top: -30px;
                 text-align: center;
                 font-weight: 100;
             }
 
-            & .btn-box {
+            &__btn-box {
                 display: flex;
                 justify-content: center;
                 align-items: center;
 
-                .article__button {
+                &__button {
                     @include button($colorTwo, $white);
                 }
             }
@@ -379,6 +380,7 @@ body {
         width: 100%;
         padding: 2rem;
 
+        // style des éléments générés par CKeditor
         & h2 {
             margin: 1rem 0;
         }
@@ -419,6 +421,7 @@ body {
             }
         }
     }
+
     &__created{
         align-self: flex-end;
         margin-right: 2rem;
@@ -440,24 +443,24 @@ body {
     box-shadow: 0 50px 50px rgba(0, 0, 0, .5);
     border-radius: .4rem;
 
-    & h2 {
+    &__title {
         color: $white;
         font-size: 2rem;
     }
 
-    & .submit-message {
+    &__submit-message {
         text-align: center;
         color: $white;
     }
 
-    & .form-box {
+    &__form {
         position: relative;
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
         padding-top: 2rem;
 
-        & .input-box {
+        &__input-box {
             position: relative;
             margin-bottom: 1.6rem;
 
@@ -471,7 +474,7 @@ body {
                 justify-content: center;
             }
 
-            & input, textarea {
+            &__input, &__textarea {
                 width: 100%;
                 padding: 5px;
                 font-size: 18px;
@@ -484,15 +487,15 @@ body {
                 outline: none;
             }
 
-            & small {
+            &__small {
                 color: crimson;
             }
 
-            & textarea {
+            &__textarea {
                 min-height: 120px;
             }
 
-            & label {
+            &__label {
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -504,14 +507,17 @@ body {
                 pointer-events: none;
             }
 
-            & input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid ~ label {
+            &__input:focus ~ &__label, &__textarea:focus ~ &__label, &__input:valid ~ &__label, &__textarea:valid ~ &__label {
                 transform: translateY(-20px);
                 font-size: 16px;
                 color: $colorThree;
             }
 
-            & input[type="submit"] {
+            &__input[type="submit"] {
                 @include button($colorOne, $white);
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
             }
         }
     }

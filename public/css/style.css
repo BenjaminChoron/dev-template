@@ -19,9 +19,6 @@ body {
   align-items: center;
   padding: 2rem; }
 
-.menu.expend .menu__toggle__hover {
-  color: #f1f1f1; }
-
 .menu {
   z-index: 9999;
   display: flex;
@@ -31,6 +28,11 @@ body {
   top: 0;
   left: 0;
   padding: 1em; }
+  .menu.expend {
+    width: 176px;
+    height: 100vh;
+    background-color: #003638;
+    box-shadow: 0 0 10px #333; }
   .menu__toggle {
     display: flex;
     align-items: center;
@@ -44,64 +46,58 @@ body {
       color: #003638;
       font-size: 0;
       transition: .3s; }
+      .menu__toggle__hover.appear {
+        font-size: 30px;
+        line-height: 30px; }
     .menu__toggle__icon {
       width: 40px;
       height: 34px; }
   .menu__container {
     display: none; }
-  .menu__nav {
-    flex: 1; }
-  .menu__socials {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    list-style: none; }
-    .menu__socials__link {
-      margin: .6em;
-      text-transform: uppercase; }
-      .menu__socials__link a {
-        display: inline-block;
-        color: #f1f1f1;
-        text-decoration: none;
-        transition: .3s; }
-        .menu__socials__link a:hover {
-          transform: scale(1.2); }
+    .menu__container.show-menu {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      flex-direction: column; }
+    .menu__container__nav {
+      flex: 1; }
+      .menu__container__nav__list {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        list-style: none; }
+        .menu__container__nav__list__item {
+          margin: 1em 0;
+          transition: .3s; }
+          .menu__container__nav__list__item__link {
+            color: #f1f1f1;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: .3s; }
+            .menu__container__nav__list__item__link:hover {
+              color: #53B8BB; }
+          .menu__container__nav__list__item:hover {
+            transform: scale(1.2); }
+    .menu__container__socials {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      list-style: none; }
+      .menu__container__socials__item {
+        margin: .6em;
+        text-transform: uppercase; }
+        .menu__container__socials__item__link {
+          display: inline-block;
+          color: #f1f1f1;
+          text-decoration: none;
+          transition: .3s; }
+          .menu__container__socials__item__link:hover {
+            transform: scale(1.2); }
 
-.expend {
-  width: 176px;
-  height: 100vh;
-  background-color: #003638;
-  box-shadow: 0 0 10px #333; }
-
-.appear {
-  font-size: 30px;
-  line-height: 30px; }
-
-.show-menu {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  flex-direction: column; }
-
-.nav__list {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  list-style: none; }
-  .nav__list__item {
-    margin: 1em 0;
-    transition: .3s; }
-    .nav__list__item a {
-      color: #f1f1f1;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: .3s; }
-      .nav__list__item a:hover {
-        color: #53B8BB; }
-    .nav__list__item:hover {
-      transform: scale(1.2); }
+.menu.expend .menu__toggle__hover {
+  color: #f1f1f1; }
 
 .main.projects {
   flex-direction: column;
@@ -185,33 +181,11 @@ body {
           .projects-container .project__content__btn-box__button__link__img {
             width: 30px; }
 
-.content__title {
-  position: relative;
-  top: -30px;
-  margin-bottom: 1rem;
-  text-align: center; }
-
-.article__button {
-  margin: .4rem;
-  padding: .4rem;
-  background-color: #055052;
-  border: none;
-  border-radius: .4rem;
-  box-shadow: 0 0 50px #333;
-  color: #f1f1f1;
-  cursor: pointer;
-  transition: .3s; }
-  .article__button a {
-    text-decoration: none;
-    color: #f1f1f1; }
-  .article__button:hover {
-    background-color: black; }
-
 .main.blog {
   flex-direction: column;
   justify-content: flex-start; }
 
-.article-container {
+.articles-container {
   margin-top: 3rem;
   width: 100%;
   display: flex;
@@ -219,7 +193,7 @@ body {
   align-items: flex-start;
   flex-wrap: wrap;
   padding: 2rem; }
-  .article-container .card {
+  .articles-container .card {
     position: relative;
     max-width: 300px;
     background-color: #f1f1f1;
@@ -229,7 +203,7 @@ body {
     display: flex;
     flex-direction: column;
     box-shadow: 0 5px 202px rgba(0, 0, 0, 0.5); }
-    .article-container .card .imgBx {
+    .articles-container .card__img-box {
       position: relative;
       top: -60px;
       left: 50%;
@@ -241,25 +215,25 @@ body {
       border-radius: 4px;
       background-size: cover;
       background-position: center; }
-    .article-container .card .content {
+    .articles-container .card__content {
       position: relative;
       padding: 0 1rem;
       text-align: left; }
-      .article-container .card .content .title {
+      .articles-container .card__content__title {
         position: relative;
         top: -30px;
         margin-bottom: 1rem;
         text-align: center; }
-      .article-container .card .content .subtitle {
+      .articles-container .card__content__subtitle {
         position: relative;
         top: -30px;
         text-align: center;
         font-weight: 100; }
-      .article-container .card .content .btn-box {
+      .articles-container .card__content__btn-box {
         display: flex;
         justify-content: center;
         align-items: center; }
-        .article-container .card .content .btn-box .article__button {
+        .articles-container .card__content__btn-box__button {
           margin: .4rem;
           padding: .4rem;
           background-color: #055052;
@@ -269,10 +243,10 @@ body {
           color: #f1f1f1;
           cursor: pointer;
           transition: .3s; }
-          .article-container .card .content .btn-box .article__button a {
+          .articles-container .card__content__btn-box__button a {
             text-decoration: none;
             color: #f1f1f1; }
-          .article-container .card .content .btn-box .article__button:hover {
+          .articles-container .card__content__btn-box__button:hover {
             background-color: black; }
 
 .main.article, .main.project {
@@ -333,28 +307,28 @@ body {
   width: 90%;
   box-shadow: 0 50px 50px rgba(0, 0, 0, 0.5);
   border-radius: .4rem; }
-  .contact-form h2 {
+  .contact-form__title {
     color: #f1f1f1;
     font-size: 2rem; }
-  .contact-form .submit-message {
+  .contact-form__submit-message {
     text-align: center;
     color: #f1f1f1; }
-  .contact-form .form-box {
+  .contact-form__form {
     position: relative;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     padding-top: 2rem; }
-    .contact-form .form-box .input-box {
+    .contact-form__form__input-box {
       position: relative;
       margin-bottom: 1.6rem; }
-      .contact-form .form-box .input-box.w50 {
+      .contact-form__form__input-box.w50 {
         width: 47%; }
-      .contact-form .form-box .input-box.w100 {
+      .contact-form__form__input-box.w100 {
         width: 100%;
         display: flex;
         justify-content: center; }
-      .contact-form .form-box .input-box input, .contact-form .form-box .input-box textarea {
+      .contact-form__form__input-box__input, .contact-form__form__input-box__textarea {
         width: 100%;
         padding: 5px;
         font-size: 18px;
@@ -365,11 +339,11 @@ body {
         border: none;
         border-bottom: 1px solid #f1f1f1;
         outline: none; }
-      .contact-form .form-box .input-box small {
+      .contact-form__form__input-box__small {
         color: crimson; }
-      .contact-form .form-box .input-box textarea {
+      .contact-form__form__input-box__textarea {
         min-height: 120px; }
-      .contact-form .form-box .input-box label {
+      .contact-form__form__input-box__label {
         position: absolute;
         top: 0;
         left: 0;
@@ -379,11 +353,11 @@ body {
         color: #f1f1f1;
         transition: .3s;
         pointer-events: none; }
-      .contact-form .form-box .input-box input:focus ~ label, .contact-form .form-box .input-box textarea:focus ~ label, .contact-form .form-box .input-box input:valid ~ label, .contact-form .form-box .input-box textarea:valid ~ label {
+      .contact-form__form__input-box__input:focus ~ .contact-form__form__input-box__label, .contact-form__form__input-box__textarea:focus ~ .contact-form__form__input-box__label, .contact-form__form__input-box__input:valid ~ .contact-form__form__input-box__label, .contact-form__form__input-box__textarea:valid ~ .contact-form__form__input-box__label {
         transform: translateY(-20px);
         font-size: 16px;
         color: #53B8BB; }
-      .contact-form .form-box .input-box input[type="submit"] {
+      .contact-form__form__input-box__input[type="submit"] {
         margin: .4rem;
         padding: .4rem;
         background-color: #003638;
@@ -392,11 +366,14 @@ body {
         box-shadow: 0 0 50px #333;
         color: #f1f1f1;
         cursor: pointer;
-        transition: .3s; }
-        .contact-form .form-box .input-box input[type="submit"] a {
+        transition: .3s;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%); }
+        .contact-form__form__input-box__input[type="submit"] a {
           text-decoration: none;
           color: #f1f1f1; }
-        .contact-form .form-box .input-box input[type="submit"]:hover {
+        .contact-form__form__input-box__input[type="submit"]:hover {
           background-color: black; }
 
 .error__img {
