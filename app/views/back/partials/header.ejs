@@ -18,6 +18,11 @@
                 <nav class="header__nav">
                     <ul class="header__nav__ul">
                         <li class="header__nav__ul__li">
+                            <a href="/admin/disconnect">
+                                <img class="header__nav__ul__li__img" src="/img/icons/quit.svg" alt="">
+                            </a>
+                        </li>
+                        <li class="header__nav__ul__li">
                             <a href="/admin">
                                 <img class="header__nav__ul__li__img" src="/img/icons/house.svg" alt="">
                             </a>
@@ -35,7 +40,11 @@
                                             <span class="receivedMessages__badge"><%= notSeen.length %></span>
                                             <img class="receivedMessages__img" src="/img/icons/mailbox.svg" alt="">
                                         </div>
-                                    <% } %>
+                                    <% } else { %>
+                                        <div class="receivedMessages">
+                                            <img class="receivedMessages__img" src="/img/icons/postbox.svg" alt="">
+                                        </div>
+                                    <% } %> 
                                 <% } else { %>
                                     <div class="receivedMessages">
                                         <img class="receivedMessages__img" src="/img/icons/postbox.svg" alt="">

@@ -30,6 +30,7 @@ router.get('/login', adminController.loginPage);
 router.post('/login', adminController.loginAction);
 
 router.get('/admin', adminMiddleware, adminController.adminPage);
+router.get('/admin/disconnect', adminMiddleware, adminController.disconnect);
 
 // PROFIL
 router.get('/admin/profil', adminMiddleware, profilController.profilPage);

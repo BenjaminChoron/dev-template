@@ -91,6 +91,12 @@ const adminController = {
             }
         });
         res.render('back/profil', { notSeen, user: req.session.user });
+    },
+
+    disconnect: (req, res) => {
+        req.session.destroy();
+
+        res.redirect('/login');
     }
 };
 
