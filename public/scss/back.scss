@@ -289,10 +289,6 @@ body {
                 display: flex;
                 border-bottom: 1px solid rgba(128, 128, 128, 0.276);
 
-                &:last-child {
-                    border-bottom: none;
-                }
-
                 &__td {
                     padding: 1rem;
                     text-align: center;
@@ -316,6 +312,37 @@ body {
                                 transform: scale(1.2);
                             }
                         }
+                    }
+                }
+            }
+        }
+
+        &__tfoot {
+            &__tr {
+                &__td {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: .4rem;
+                    border-radius: .4rem;
+                    background-color: $white;
+
+                    &.totals {
+                        justify-content: flex-end;
+                    }
+
+                    &__arrows {
+                        &__img {
+                            width: 30px;
+                        }
+                    }
+
+                    &__pages {
+                        margin: 0 1rem;
+                    }
+
+                    &__totals {
+                        margin: 0 1rem;
                     }
                 }
             }

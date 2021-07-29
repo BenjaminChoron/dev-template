@@ -171,8 +171,6 @@ body {
   .messages__table__tbody__tr {
     display: flex;
     border-bottom: 1px solid rgba(128, 128, 128, 0.276); }
-    .messages__table__tbody__tr:last-child {
-      border-bottom: none; }
     .messages__table__tbody__tr__td {
       padding: 1rem;
       text-align: center;
@@ -189,6 +187,21 @@ body {
           transition: .3s; }
           .messages__table__tbody__tr__td__link__icon:hover {
             transform: scale(1.2); }
+  .messages__table__tfoot__tr__td {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .4rem;
+    border-radius: .4rem;
+    background-color: #f1f1f1; }
+    .messages__table__tfoot__tr__td.totals {
+      justify-content: flex-end; }
+    .messages__table__tfoot__tr__td__arrows__img {
+      width: 30px; }
+    .messages__table__tfoot__tr__td__pages {
+      margin: 0 1rem; }
+    .messages__table__tfoot__tr__td__totals {
+      margin: 0 1rem; }
 
 .seen-true {
   background-color: #f1f1f1; }

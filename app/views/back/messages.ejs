@@ -39,6 +39,33 @@
                 <% } %>
             <% } %>
         </tbody>
+        <tfoot class="messages__table__tfoot">
+            <tr class="messages__table__tfoot__tr">
+                <td class="messages__table__tfoot__tr__td">
+                    <% if (locals.previous) { %>
+                        <a class="messages__table__tfoot__tr__td__arrows" href="/admin/messages?page=<%= previous.page %>&limit=10">
+                            <img class="messages__table__tfoot__tr__td__arrows__img" src="/img/icons/previous.svg" alt="">
+                        </a>
+                    <% } %> 
+            
+                    <% if (locals.currentPage && locals.numberOfPages) { %>
+                        <p class="messages__table__tfoot__tr__td__pages"><%= currentPage %> | <%= numberOfPages %></p>
+                    <% } %>
+                
+                    <% if (locals.next) { %>
+                        <a class="messages__table__tfoot__tr__td__arrows" href="/admin/messages?page=<%= next.page %>&limit=10">
+                            <img class="messages__table__tfoot__tr__td__arrows__img" src="/img/icons/next.svg" alt="">
+                        </a>
+                    <% } %> 
+                </td>
+            </tr>
+            <tr class="messages__table__tfoot__tr">
+                <td class="messages__table__tfoot__tr__td totals">
+                    <p class="messages__table__tfoot__tr__td__totals"><%= allMessages.length %> messages reçus</p>
+                    <p class="messages__table__tfoot__tr__td__totals">dont <%= notSeen.length %> non lus</p>
+                </td>
+            </tr>
+        </tfoot>
     </table>
 
 </main>

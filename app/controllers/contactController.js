@@ -1,5 +1,6 @@
 const { User, Message, Project, Article } = require('../models');
 const validator = require('validator');
+const paginate = require('express-paginate');
 
 
 const contactController = {
@@ -45,12 +46,13 @@ const contactController = {
 
     seeAllMessages: async (req, res) => {
         try {
-            const messages = await Message.findAll();
             const notSeen = await Message.findAll({
                 where: {
                     seen: false
                 }
             });
+
+            const messages = await Message.findAll();
 
             // TRIER LES MESSAGES PAR ID
             // function pour comparer les valeurs
@@ -64,7 +66,41 @@ const contactController = {
             // on sort le resultat
             const sortResult = [...messages].sort(byId);
 
-            res.render('back/messages', { messages: sortResult, notSeen });
+            const page = parseInt(req.query.page);
+            const limit = parseInt(req.query.limit);
+
+            const startIndex = (page - 1) * limit;
+            const endIndex = page * limit;
+
+            const results = {};
+
+            if(endIndex < messages.length) {
+                results.next = {
+                    page: page + 1,
+                    limit: limit
+                }
+            }
+
+            if(startIndex > 0) {
+                results.previous = {
+                    page: page - 1,
+                    limit: limit
+                }
+            }
+            
+            results.results = sortResult.slice(startIndex, endIndex);
+
+            numberOfPages = Math.ceil(messages.length / limit);
+
+            res.render('back/messages', {
+                currentPage: page,
+                numberOfPages, 
+                next: results.next,
+                previous: results.previous,
+                messages: results.results,
+                allMessages: messages,
+                notSeen
+            });
         } catch(error) {
             console.log(error);
         }
@@ -91,7 +127,7 @@ const contactController = {
                     id: req.params.id
                 }
             });
-            res.redirect('/admin/messages');
+            res.redirect(`/admin/messages?page=1&limit=10`);
         } catch(error) {
             console.log(error);
         }
@@ -104,7 +140,7 @@ const contactController = {
                     id: req.params.id
                 }
             });
-            res.redirect('/admin/messages');
+            res.redirect('/admin/messages?page=1&limit=10');
         } catch(error) {
             console.log(error);
         }
@@ -117,7 +153,7 @@ const contactController = {
                     id: req.params.id
                 }
             });
-            res.redirect('/admin/messages');
+            res.redirect('/admin/messages?page=1&limit=10');
         } catch(error) {
             console.log(error);
         }
