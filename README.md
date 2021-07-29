@@ -1,18 +1,18 @@
 # Dev Template
 
+> [Jeudi 29 juillet 2021]
+>
+> 🚨 Nouvelle fonctionnalité  🚨 
+>
+> La messagerie compte désormais une pagination (limite d'affichage : 10 messages)
+
 Ce projet a pour but d'aider les développeurs.euses à gagner en visibilité sans y passer des heures, avec un template de site web clés en main.
 
 Je l'ai voulu personnalisable et open source. N'hésitez pas à y apporter des modifications !
 
-🚨 Je ne demande aucune identification ou attribution si vous utilisez ce projet. Il est entièrement libre. 🚨
+⚠️ Je ne demande aucune identification ou attribution si vous utilisez ce projet. Il est entièrement libre.
 
-<<<<<<< HEAD
------------------
-
-## Un petit apperçu ?
-=======
 ## Un petit aperçu ?
->>>>>>> 02eb5a4ab29a933df6a33c548c4861074983f41c
 
 La partie visible par les visiteurs
 
